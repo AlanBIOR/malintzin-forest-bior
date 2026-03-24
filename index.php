@@ -30,8 +30,10 @@ include 'includes/header.php';
         </div> 
     </section>
 
+    <?php include 'includes/promo-banner.php'; ?>
+
     <?php if(defined('AD_SLOT_HOME')) : ?>
-        <div class="ad-wrapper container" style="margin-bottom: 4rem; text-align: center;">
+        <div class="ad-wrapper container">
             <?php echo AD_SLOT_HOME; ?>
         </div>
     <?php endif; ?>

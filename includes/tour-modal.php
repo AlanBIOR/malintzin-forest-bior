@@ -13,7 +13,7 @@
                 <p id="modal-desc" class="hero-subtitle"></p>
                 
                 <div class="modal-actions">
-                    <a href="https://wa.me/<?php echo PHONE_WHATSAPP; ?>" class="btn-discover" target="_blank">
+                    <a href="https://wa.me/<?php echo PHONE_2; ?>" class="btn-discover" target="_blank">
                         <?php echo __('btn_book'); ?>
                     </a>
                 </div>

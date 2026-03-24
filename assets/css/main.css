@@ -1073,6 +1073,199 @@ body.modal-open {
   overflow: hidden;
 }
 
+.promo-section {
+  padding: 5rem 0;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(17, 17, 17, 0.8) 0%, #111111 50%, rgba(17, 17, 17, 0.8) 100%);
+}
+
+.promo-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+@media (min-width: 768px) {
+  .promo-card {
+    flex-direction: row;
+    min-height: 550px;
+  }
+}
+.promo-card__image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  background-color: #000000;
+}
+@media (min-width: 768px) {
+  .promo-card__image {
+    width: 45%;
+    min-height: 500px;
+  }
+}
+.promo-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(0.9);
+}
+.promo-card__image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent);
+}
+.promo-card__badge {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  background-color: #ff4757;
+  color: #ffffff;
+  padding: 0.6rem 1.2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  border-radius: 50px;
+  z-index: 2;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.promo-card__content {
+  padding: 2.5rem;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .promo-card__content {
+    width: 55%;
+    padding: 4.5rem;
+  }
+}
+@media (max-width: 767px) {
+  .promo-card__content {
+    padding: 3rem 1.5rem;
+  }
+}
+.promo-card__tag {
+  color: #00a8cc;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+.promo-card h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+.promo-card p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+.promo-card__details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+@media (min-width: 768px) {
+  .promo-card__details {
+    gap: 3rem;
+  }
+}
+.promo-card__details .detail-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.promo-card__details .detail-item i {
+  font-size: 1.5rem;
+  color: #d4a373;
+}
+.promo-card__details .detail-item span {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+.promo-card__features {
+  margin-bottom: 3.5rem;
+}
+.promo-card__features ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.2rem;
+}
+.promo-card__features ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+.promo-card__features ul li i {
+  color: #00a8cc;
+  font-size: 0.8rem;
+}
+
+.btn-promo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  padding: 1.2rem 3rem;
+  border-radius: 100px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+.btn-promo:hover {
+  background: #ffffff;
+  color: #2d4a3e;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
+}
+@media (max-width: 767px) {
+  .btn-promo {
+    width: 100%;
+  }
+}
+.btn-promo i {
+  font-size: 1.2rem;
+}
+
 .home-page .tour-filter {
   margin-bottom: 1rem;
 }

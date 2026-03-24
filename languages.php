@@ -118,6 +118,21 @@ $texts = [
             ]
         ],
 
+        // --- PROMO BANNER ---
+        'promo_img_alt'    => 'Ascenso a La Malinche',
+        'promo_badge'      => '¡CUPOS LIMITADOS!',
+        'promo_tag'        => 'PRÓXIMA SALIDA',
+        'promo_title'      => 'Ascenso a la Malintzi',
+        'promo_subtitle'   => 'Vive la experiencia con GUÍA LOCAL ☀️⛰️',
+        'promo_date'       => '11 & 25 de Abril',
+        'promo_per_person' => 'POR PERSONA',
+        'promo_feat_1'     => 'Guía local',
+        'promo_feat_2'     => 'Acompañamiento durante todo el ascenso',
+        'promo_feat_3'     => 'Grupos reducidos',
+        'promo_feat_4'     => 'Incluye casco y bastones',
+        'promo_feat_5'     => 'Amanecer en la cima',
+        'btn_reserve_now'  => 'RESERVAR LUGAR',
+
         // Footer
         'footer_email_title'   => 'Correo', 
         'footer_email_subtext' => 'Envíanos un correo',
@@ -126,7 +141,7 @@ $texts = [
         'footer_about'         => 'Sobre nosotros', // Esta faltaba
         'footer_social_title'  => 'Síguenos',      // Esta faltaba
         'footer_rights'        => '© 2026 Aventuras Locales MALINTZIN. Todos los derechos reservados.',
-        'footer_agency'        => 'Desarrollado por <span>BIOR Web Studio</span>',
+        'footer_agency' => 'Desarrollado por <span><a href="https://bior-studio.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">BIOR Web Studio</a></span>',
     ],
     
     'en' => [
@@ -242,6 +257,21 @@ $texts = [
             ]
         ],
 
+        // --- PROMO BANNER ---
+        'promo_img_alt'    => 'La Malinche Ascent',
+        'promo_badge'      => 'LIMITED SPOTS!',
+        'promo_tag'        => 'NEXT EXPEDITION',
+        'promo_title'      => 'Malintzi Summit',
+        'promo_subtitle'   => 'Live the experience with LOCAL GUIDES ☀️⛰️',
+        'promo_date'       => 'April 11th & 25th',
+        'promo_per_person' => 'PER PERSON',
+        'promo_feat_1'     => 'Local guide',
+        'promo_feat_2'     => 'Accompaniment throughout the ascent',
+        'promo_feat_3'     => 'Small groups',
+        'promo_feat_4'     => 'Includes helmet and trekking poles',
+        'promo_feat_5'     => 'Sunrise at the summit',
+        'btn_reserve_now'  => 'BOOK YOUR SPOT',
+
         // Footer
         'footer_email_title'   => 'Email',
         'footer_email_subtext' => 'Send us an email',
@@ -250,8 +280,8 @@ $texts = [
         'footer_about'         => 'About us',    // Esta faltaba
         'footer_social_title'  => 'Follow us',   // Esta faltaba
         'footer_rights'        => '© 2026 Local Adventures MALINTZIN. All rights reserved.',
-        'footer_agency'        => 'Developed by <span>BIOR Web Studio</span>',
-    ]
+        'footer_agency' => 'Developed by <span><a href="https://bior-studio.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">BIOR Web Studio</a></span>',
+    ],
 ];
 
 /**

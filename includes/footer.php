@@ -11,28 +11,23 @@
             <span class="footer-label"><?php echo __('footer_contact_title'); ?></span>
             <address>
                 <?php echo __('footer_address'); ?><br>
-                <a href="tel:+<?php echo PHONE_WHATSAPP; ?>" class="footer-link">
-                    +<?php echo PHONE_WHATSAPP; ?>
+                
+                <a href="https://wa.me/52<?php echo PHONE_1; ?>" class="footer-link">
+                    <i class="fab fa-whatsapp"></i> +52 <?php echo PHONE_1; ?>
+                </a><br>
+                
+                <a href="https://wa.me/52<?php echo PHONE_2; ?>" class="footer-link">
+                    <i class="fab fa-whatsapp"></i> +52 <?php echo PHONE_2; ?>
                 </a>
             </address>
-            <a href="#" class="footer-link--alt"><?php echo __('footer_about'); ?></a>
+            <a href="#about" class="footer-link--alt"><?php echo __('footer_about'); ?></a>
         </div>
 
         <div class="footer-social">
             <span class="footer-label"><?php echo __('footer_social_title'); ?></span> 
             <ul class="social-links">
                 <li>
-                    <a href="https://instagram.com/tu-usuario" target="_blank" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://twitter.com/tu-usuario" target="_blank" aria-label="Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://facebook.com/AventurasLocalesMALINTZIN" target="_blank" aria-label="Facebook">
+                    <a href="https://www.facebook.com/share/18MuoAcnzy/" target="_blank" aria-label="Facebook">
                         <i class="fab fa-facebook-f"></i>
                     </a>
                 </li>

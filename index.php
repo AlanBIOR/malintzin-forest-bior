@@ -39,6 +39,10 @@ include 'includes/header.php';
     <?php endif; ?>
 
     <?php include 'includes/testimonials.php'; ?>
+    
+    <?php include 'includes/gallery.php'; ?>
+
+    <?php include 'includes/contact.php'; ?>
 </main>
 
 <?php include 'includes/tour-modal.php'; ?>

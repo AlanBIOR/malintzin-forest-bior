@@ -10,6 +10,7 @@
             <ul class="nav__list">
                 <li class="nav__item"><a href="#inicio" class="nav__link"><?php echo __('nav_home'); ?></a></li>
                 <li class="nav__item"><a href="#tours" class="nav__link"><?php echo __('nav_locations'); ?></a></li>
+                <li class="nav__item"><a href="#promos" class="nav__link"><?php echo __('nav_promo'); ?></a></li>
                 <li class="nav__item"><a href="#galeria" class="nav__link"><?php echo __('nav_gallery'); ?></a></li>
                 <li class="nav__item"><a href="#contacto" class="nav__link"><?php echo __('nav_contact'); ?></a></li>
                 

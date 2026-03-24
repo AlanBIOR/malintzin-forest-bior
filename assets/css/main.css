@@ -1266,6 +1266,250 @@ body.modal-open {
   font-size: 1.2rem;
 }
 
+.gallery-section {
+  padding: 5rem 0;
+  background-color: #000000;
+  color: #ffffff;
+}
+.gallery-section .section-header {
+  margin-bottom: 3rem;
+}
+.gallery-section .section-header .section-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+.gallery-section .section-header .section-subtitle {
+  font-family: "Poppins", sans-serif;
+  color: #d4a373;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+@media (min-width: 1200px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.gallery-item .gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.gallery-item .gallery-overlay i {
+  color: #ffffff;
+  font-size: 2rem;
+  transform: scale(0.5);
+  transition: transform 0.3s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+.gallery-item:hover .gallery-overlay i {
+  transform: scale(1);
+}
+
+.btn-outline-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 2rem;
+  border: 2px solid #00a8cc;
+  color: #00a8cc;
+  border-radius: 50px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.btn-outline-primary:hover {
+  background-color: #00a8cc;
+  color: #ffffff;
+}
+
+.contact-section {
+  padding: 5rem 0;
+  background-color: #111111;
+  color: #ffffff;
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+}
+@media (min-width: 768px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+@media (min-width: 1200px) {
+  .contact-wrapper {
+    gap: 5rem;
+  }
+}
+
+.contact-form-col .section-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 0.5rem;
+}
+.contact-form-col .section-subtitle {
+  color: #d4a373;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2.5rem;
+  font-weight: 600;
+}
+
+.bior-form .form-group {
+  margin-bottom: 1.5rem;
+}
+.bior-form .form-group label {
+  display: block;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.5rem;
+}
+.bior-form .form-group input, .bior-form .form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+}
+.bior-form .form-group input:focus, .bior-form .form-group textarea:focus {
+  outline: none;
+  border-color: #00a8cc;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+.bior-form .form-group input::placeholder, .bior-form .form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+.bior-form .form-group textarea {
+  resize: vertical;
+}
+.bior-form .form-submit {
+  width: 100%;
+  padding: 1rem;
+  background-color: #2d4a3e;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  transition: all 0.3s ease;
+}
+.bior-form .form-submit:hover {
+  background-color: rgb(54.6428571429, 89.8571428571, 75.2857142857);
+  transform: translateY(-2px);
+}
+
+.contact-info-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+.info-card h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.info-card p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+.info-card .info-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.info-card .info-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+.info-card .info-list li i {
+  color: #00a8cc;
+  font-size: 1.5rem;
+  margin-top: 0.2rem;
+}
+.info-card .info-list li span {
+  display: block;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.2rem;
+}
+.info-card .info-list li a, .info-card .info-list li p {
+  margin: 0;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.info-card .info-list li a:hover {
+  color: #d4a373;
+}
+
 .home-page .tour-filter {
   margin-bottom: 1rem;
 }

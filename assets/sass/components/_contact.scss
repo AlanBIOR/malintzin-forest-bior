@@ -1,0 +1,174 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "sass:color";
+
+.contact-section {
+    padding: 5rem 0;
+    background-color: #111111; // Un gris casi negro para separar visualmente
+    color: $white;
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr; // 1 columna en móvil
+    gap: 4rem;
+
+    @include breakpoint(tablet) {
+        grid-template-columns: 1fr 1fr; // 2 columnas desde tablet
+        gap: 3rem;
+    }
+
+    @include breakpoint(desktop) {
+        gap: 5rem;
+    }
+}
+
+// --- COLUMNA DEL FORMULARIO ---
+.contact-form-col {
+    .section-title {
+        font-family: $font-title;
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+        color: $color-secondary;
+        font-size: $text-lg;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 2.5rem;
+        font-weight: 600;
+    }
+}
+
+.bior-form {
+    .form-group {
+        margin-bottom: 1.5rem;
+
+        label {
+            display: block;
+            font-family: $font-main;
+            font-size: 1.4rem;
+            color: rgba($white, 0.8);
+            margin-bottom: 0.5rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 1rem;
+            background-color: rgba($white, 0.05); // Fondo translúcido
+            border: 1px solid rgba($white, 0.1);
+            border-radius: $border-radius;
+            color: $white;
+            font-family: $font-main;
+            font-size: 1.4rem;
+            transition: all $transition-fast;
+
+            &:focus {
+                outline: none;
+                border-color: $color-accent; // Brillo azul al escribir
+                background-color: rgba($white, 0.08);
+            }
+
+            &::placeholder {
+                color: rgba($white, 0.3);
+            }
+        }
+        
+        textarea {
+            resize: vertical; // Solo permite estirar hacia abajo
+        }
+    }
+
+    .form-submit {
+        width: 100%;
+        padding: 1rem;
+        background-color: $color-primary; // Verde bosque
+        color: $white;
+        border: none;
+        border-radius: $border-radius;
+        font-weight: 700;
+        font-size: 1rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.8rem;
+        transition: all $transition-fast;
+
+        &:hover {
+            background-color: color.adjust($color-primary, $lightness: 5%);
+            transform: translateY(-2px);
+        }
+    }
+}
+
+// --- COLUMNA DE INFORMACIÓN ---
+.contact-info-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-card {
+    background: rgba($white, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba($white, 0.1);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    box-shadow: 0 15px 30px rgba($black, 0.2);
+
+    h3 {
+        font-family: $font-title;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        color: rgba($white, 0.7);
+        margin-bottom: 2rem;
+        line-height: 1.6;
+    }
+
+    .info-list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+
+            i {
+                color: $color-accent;
+                font-size: 1.5rem;
+                margin-top: 0.2rem;
+            }
+
+            span {
+                display: block;
+                font-size: $text-sm;
+                color: rgba($white, 0.5);
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 0.2rem;
+            }
+
+            a, p {
+                margin: 0;
+                color: $white;
+                font-weight: 600;
+                font-size: 1.1rem;
+                text-decoration: none;
+                transition: color $transition-fast;
+            }
+
+            a:hover {
+                color: $color-secondary;
+            }
+        }
+    }
+}

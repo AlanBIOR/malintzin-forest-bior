@@ -1,4 +1,4 @@
-<section id="next-trips" class="promo-section">
+<section id="promos" class="promo-section">
     <div class="promo-card">
         <div class="promo-card__image">
             <img src="assets/img/volante-malintzin.jpeg" alt="<?php echo __('promo_img_alt'); ?>">

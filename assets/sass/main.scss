@@ -17,6 +17,8 @@
 @use 'components/testimonials';
 @use 'components/modal';
 @use 'components/promo-banner';
+@use "components/gallery";
+@use "components/contact";
 
 // 5. PAGES
 @use 'pages/home';

@@ -9,6 +9,7 @@ $texts = [
         // Navegación
         'nav_home' => 'Inicio',
         'nav_locations' => 'Ubicaciones',
+        'nav_promo'     => 'Promociones',
         'nav_gallery' => 'Galería',
         'nav_contact' => 'Contacto',
         
@@ -133,21 +134,38 @@ $texts = [
         'promo_feat_5'     => 'Amanecer en la cima',
         'btn_reserve_now'  => 'RESERVAR LUGAR',
 
-        // Footer
-        'footer_email_title'   => 'Correo', 
-        'footer_email_subtext' => 'Envíanos un correo',
-        'footer_contact_title' => 'Contáctanos', 
-        'footer_address'       => 'Apizaco, Tlaxcala, México',
-        'footer_about'         => 'Sobre nosotros', // Esta faltaba
-        'footer_social_title'  => 'Síguenos',      // Esta faltaba
-        'footer_rights'        => '© 2026 Aventuras Locales MALINTZIN. Todos los derechos reservados.',
-        'footer_agency' => 'Desarrollado por <span><a href="https://bior-studio.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">BIOR Web Studio</a></span>',
+        // --- GALERÍA ---
+        'gallery_title'         => 'Galería',
+        'gallery_subtitle'      => 'NUESTRAS AVENTURAS EN IMÁGENES',
+        'btn_see_more_ig'       => 'Ver más en Instagram',
+
+        // --- CONTACTO ---
+        'contact_title'         => 'Contáctanos',
+        'contact_subtitle'      => '¿LISTO PARA TU PRÓXIMA AVENTURA?',
+        'form_name'             => 'Nombre completo',
+        'form_name_ph'          => 'Ej. Juan Pérez',
+        'form_email'            => 'Correo electrónico',
+        'form_email_ph'         => 'tu@correo.com',
+        'form_message'          => 'Mensaje o dudas',
+        'form_message_ph'       => 'Cuéntanos qué fecha te interesa...',
+        'btn_send_message'      => 'ENVIAR MENSAJE',
+        'contact_direct_title'  => 'Atención Inmediata',
+        'contact_direct_desc'   => 'Si prefieres una respuesta más rápida, escríbenos directo a nuestros números oficiales.',
+        'contact_location'      => 'Punto Base',
+
+        // --- FOOTER ---
+        'footer_brand_desc'  => 'Explora los senderos más bellos con guías expertos locales en la montaña.',
+        'footer_quick_links' => 'Enlaces Rápidos',
+        'footer_follow_us'   => 'Síguenos',
+        'footer_rights'      => 'Todos los derechos reservados.',
+        'footer_agency'      => 'Desarrollado por <span><a href="https://bior-studio.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">BIOR Web Studio</a></span>',
     ],
     
     'en' => [
         // Navigation
         'nav_home' => 'Home',
         'nav_locations' => 'Locations',
+        'nav_promo'     => 'Promos',
         'nav_gallery' => 'Gallery',
         'nav_contact' => 'Contact',
 
@@ -272,15 +290,31 @@ $texts = [
         'promo_feat_5'     => 'Sunrise at the summit',
         'btn_reserve_now'  => 'BOOK YOUR SPOT',
 
-        // Footer
-        'footer_email_title'   => 'Email',
-        'footer_email_subtext' => 'Send us an email',
-        'footer_contact_title' => 'Contact us',
-        'footer_address'       => 'Apizaco, Tlaxcala, Mexico',
-        'footer_about'         => 'About us',    // Esta faltaba
-        'footer_social_title'  => 'Follow us',   // Esta faltaba
-        'footer_rights'        => '© 2026 Local Adventures MALINTZIN. All rights reserved.',
-        'footer_agency' => 'Developed by <span><a href="https://bior-studio.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">BIOR Web Studio</a></span>',
+        // --- GALERÍA ---
+        'gallery_title'         => 'Gallery',
+        'gallery_subtitle'      => 'OUR ADVENTURES IN PICTURES',
+        'btn_see_more_ig'       => 'See more on Instagram',
+
+        // --- CONTACTO ---
+        'contact_title'         => 'Contact Us',
+        'contact_subtitle'      => 'READY FOR YOUR NEXT ADVENTURE?',
+        'form_name'             => 'Full Name',
+        'form_name_ph'          => 'e.g. John Doe',
+        'form_email'            => 'Email Address',
+        'form_email_ph'         => 'you@email.com',
+        'form_message'          => 'Message or questions',
+        'form_message_ph'       => 'Tell us which date you are interested in...',
+        'btn_send_message'      => 'SEND MESSAGE',
+        'contact_direct_title'  => 'Direct Attention',
+        'contact_direct_desc'   => 'If you prefer a faster response, text us directly on our official numbers.',
+        'contact_location'      => 'Base Point',
+
+        // --- FOOTER ---
+        'footer_brand_desc'  => 'Explore the most beautiful trails with expert local mountain guides.',
+        'footer_quick_links' => 'Quick Links',
+        'footer_follow_us'   => 'Follow Us',
+        'footer_rights'      => 'All rights reserved.',
+        'footer_agency'      => 'Developed by <span><a href="https://bior-studio.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">BIOR Web Studio</a></span>',
     ],
 ];
 

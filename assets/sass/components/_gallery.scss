@@ -107,3 +107,56 @@
         color: $white;
     }
 }
+
+// --- LIGHTBOX MODAL ---
+.gallery-lightbox {
+    display: none; // Oculto por defecto
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black, 0.9); // Fondo muy oscuro
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity $transition-fast;
+
+    // Clase para cuando está activo
+    &.active {
+        display: flex;
+        opacity: 1;
+    }
+
+    &__content {
+        max-width: 90%;
+        max-height: 90vh;
+        object-fit: contain;
+        border-radius: $border-radius;
+        box-shadow: 0 10px 30px rgba($black, 0.5);
+        transform: scale(0.95);
+        transition: transform $transition-fast;
+    }
+
+    &.active &__content {
+        transform: scale(1);
+    }
+
+    &__close {
+        position: absolute;
+        top: 20px;
+        right: 35px;
+        color: $white;
+        font-size: 3rem;
+        font-weight: 300;
+        cursor: pointer;
+        transition: color $transition-fast;
+        z-index: 10000;
+
+        &:hover {
+            color: $color-secondary; // Tu color dorado arena
+        }
+    }
+}

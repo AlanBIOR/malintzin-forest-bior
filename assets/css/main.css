@@ -305,7 +305,7 @@ h1, h2, h3 {
     top: -100vh;
     left: 0;
     width: 100%;
-    height: 350px;
+    height: 400px;
     background-color: rgba(5, 5, 5, 0.95);
     backdrop-filter: blur(10px);
     display: flex;
@@ -416,7 +416,7 @@ h1, h2, h3 {
 }
 .main-footer .footer-link {
   display: inline-block;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: rgba(255, 255, 255, 0.9);
   transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -1357,6 +1357,52 @@ body.modal-open {
 .btn-outline-primary:hover {
   background-color: #00a8cc;
   color: #ffffff;
+}
+
+.gallery-lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.gallery-lightbox.active {
+  display: flex;
+  opacity: 1;
+}
+.gallery-lightbox__content {
+  max-width: 90%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+.gallery-lightbox.active .gallery-lightbox__content {
+  transform: scale(1);
+}
+.gallery-lightbox__close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: 300;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  z-index: 10000;
+}
+.gallery-lightbox__close:hover {
+  color: #d4a373;
 }
 
 .contact-section {

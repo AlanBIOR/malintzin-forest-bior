@@ -37,5 +37,11 @@
                 <i class="fab fa-instagram"></i> <?php echo __('btn_see_more_ig'); ?>
             </a>
         </div>
+        
+        <div id="gallery-modal" class="gallery-lightbox">
+            <span class="gallery-lightbox__close" aria-label="Cerrar">&times;</span>
+            <img class="gallery-lightbox__content" id="gallery-lightbox-img" src="" alt="Vista ampliada">
+        </div>
+
     </div>
 </section>

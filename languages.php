@@ -77,27 +77,27 @@ $texts = [
 
         'rutas_data' => [
             // La Malinche
-            'cima'          => ['alt' => '4,420 msnm', 'diff' => 'Avanzado',   'dur' => '8-10 Horas', 'meet' => 'Centro Apizaco'],
+            'cima'          => ['alt' => '4,420 msnm', 'diff' => 'Avanzado',   'dur' => '8-10 Horas', 'meet' => 'Santa Ana Chiautempan'],
             'arenal'        => ['alt' => '3,900 msnm', 'diff' => 'Intermedio', 'dur' => '6-7 Horas',  'meet' => 'San José Teacalco'],
             'bosque'        => ['alt' => '3,100 msnm', 'diff' => 'Baja',       'dur' => '3-4 Horas',  'meet' => 'Caseta de Vigilancia'],
-            'cresta'        => ['alt' => '4,100 msnm', 'diff' => 'Avanzado',   'dur' => '7-8 Horas',  'meet' => 'Centro Apizaco'],
+            'cresta'        => ['alt' => '4,100 msnm', 'diff' => 'Avanzado',   'dur' => '7-8 Horas',  'meet' => 'Santa Ana Chiautempan'],
             'base'          => ['alt' => '3,000 msnm', 'diff' => 'Baja',       'dur' => '2-3 Horas',  'meet' => 'Estacionamiento IMSS'],
             'mirador'       => ['alt' => '3,400 msnm', 'diff' => 'Media',      'dur' => '4-5 Horas',  'meet' => 'Caseta de Vigilancia'],
             
             // Rutas Nevadas
-            'nocturna'      => ['alt' => '3,800 msnm', 'diff' => 'Media',      'dur' => '5-6 Horas',  'meet' => 'Centro Apizaco'],
-            'nieve_alta'    => ['alt' => '4,200 msnm', 'diff' => 'Experto',    'dur' => '9-11 Horas', 'meet' => 'Centro Apizaco'],
+            'nocturna'      => ['alt' => '3,800 msnm', 'diff' => 'Media',      'dur' => '5-6 Horas',  'meet' => 'Santa Ana Chiautempan'],
+            'nieve_alta'    => ['alt' => '4,200 msnm', 'diff' => 'Experto',    'dur' => '9-11 Horas', 'meet' => 'Santa Ana Chiautempan'],
             'hielo_cristal' => ['alt' => '4,000 msnm', 'diff' => 'Avanzado',   'dur' => '7-8 Horas',  'meet' => 'San José Teacalco'],
             'refugio'       => ['alt' => '3,100 msnm', 'diff' => 'Baja',       'dur' => '3-4 Horas',  'meet' => 'Estacionamiento IMSS'],
-            'pico_nieve'    => ['alt' => '4,420 msnm', 'diff' => 'Experto',    'dur' => '10-12 Horas','meet' => 'Centro Apizaco'],
+            'pico_nieve'    => ['alt' => '4,420 msnm', 'diff' => 'Experto',    'dur' => '10-12 Horas','meet' => 'Santa Ana Chiautempan'],
             'valle_frio'    => ['alt' => '3,500 msnm', 'diff' => 'Media',      'dur' => '5-6 Horas',  'meet' => 'San José Teacalco'],
             
             // Mar de Nubes
-            'canada'        => ['alt' => '3,700 msnm', 'diff' => 'Media',      'dur' => '6-7 Horas',  'meet' => 'Centro Apizaco'],
+            'canada'        => ['alt' => '3,700 msnm', 'diff' => 'Media',      'dur' => '6-7 Horas',  'meet' => 'Santa Ana Chiautempan'],
             'aves'          => ['alt' => '3,200 msnm', 'diff' => 'Baja',       'dur' => '4-5 Horas',  'meet' => 'Caseta de Vigilancia'],
             'niebla_baja'   => ['alt' => '3,100 msnm', 'diff' => 'Baja',       'dur' => '3-4 Horas',  'meet' => 'Estacionamiento IMSS'],
-            'vuelo_nubes'   => ['alt' => '4,000 msnm', 'diff' => 'Avanzado',   'dur' => '8-9 Horas',  'meet' => 'Centro Apizaco'],
-            'amanecer_n'    => ['alt' => '4,200 msnm', 'diff' => 'Avanzado',   'dur' => '9-10 Horas', 'meet' => 'Centro Apizaco'],
+            'vuelo_nubes'   => ['alt' => '4,000 msnm', 'diff' => 'Avanzado',   'dur' => '8-9 Horas',  'meet' => 'Santa Ana Chiautempan'],
+            'amanecer_n'    => ['alt' => '4,200 msnm', 'diff' => 'Avanzado',   'dur' => '9-10 Horas', 'meet' => 'Santa Ana Chiautempan'],
             'sendero_m'     => ['alt' => '3,400 msnm', 'diff' => 'Media',      'dur' => '5-6 Horas',  'meet' => 'San José Teacalco']
         ],
 
@@ -233,27 +233,27 @@ $texts = [
 
         'rutas_data' => [
             // La Malinche
-            'cima'          => ['alt' => '14,500 ft', 'diff' => 'Advanced',     'dur' => '8-10 Hours', 'meet' => 'Apizaco Center'],
+            'cima'          => ['alt' => '14,500 ft', 'diff' => 'Advanced',     'dur' => '8-10 Hours', 'meet' => 'Santa Ana Chiautempan'],
             'arenal'        => ['alt' => '12,800 ft', 'diff' => 'Intermediate', 'dur' => '6-7 Hours',  'meet' => 'San José Teacalco'],
             'bosque'        => ['alt' => '10,200 ft', 'diff' => 'Easy',         'dur' => '3-4 Hours',  'meet' => 'Vigilance Post'],
-            'cresta'        => ['alt' => '13,450 ft', 'diff' => 'Advanced',     'dur' => '7-8 Hours',  'meet' => 'Apizaco Center'],
+            'cresta'        => ['alt' => '13,450 ft', 'diff' => 'Advanced',     'dur' => '7-8 Hours',  'meet' => 'Santa Ana Chiautempan'],
             'base'          => ['alt' => '9,850 ft',  'diff' => 'Easy',         'dur' => '2-3 Hours',  'meet' => 'IMSS Parking'],
             'mirador'       => ['alt' => '11,150 ft', 'diff' => 'Medium',       'dur' => '4-5 Hours',  'meet' => 'Vigilance Post'],
             
             // Snowy Routes
-            'nocturna'      => ['alt' => '12,450 ft', 'diff' => 'Medium',       'dur' => '5-6 Hours',  'meet' => 'Apizaco Center'],
-            'nieve_alta'    => ['alt' => '13,780 ft', 'diff' => 'Expert',       'dur' => '9-11 Hours', 'meet' => 'Apizaco Center'],
+            'nocturna'      => ['alt' => '12,450 ft', 'diff' => 'Medium',       'dur' => '5-6 Hours',  'meet' => 'Santa Ana Chiautempan'],
+            'nieve_alta'    => ['alt' => '13,780 ft', 'diff' => 'Expert',       'dur' => '9-11 Hours', 'meet' => 'Santa Ana Chiautempan'],
             'hielo_cristal' => ['alt' => '13,120 ft', 'diff' => 'Advanced',     'dur' => '7-8 Hours',  'meet' => 'San José Teacalco'],
             'refugio'       => ['alt' => '10,200 ft', 'diff' => 'Easy',         'dur' => '3-4 Hours',  'meet' => 'IMSS Parking'],
-            'pico_nieve'    => ['alt' => '14,500 ft', 'diff' => 'Expert',       'dur' => '10-12 Hours','meet' => 'Apizaco Center'],
+            'pico_nieve'    => ['alt' => '14,500 ft', 'diff' => 'Expert',       'dur' => '10-12 Hours','meet' => 'Santa Ana Chiautempan'],
             'valle_frio'    => ['alt' => '11,480 ft', 'diff' => 'Medium',       'dur' => '5-6 Hours',  'meet' => 'San José Teacalco'],
             
             // Sea of Clouds
-            'canada'        => ['alt' => '12,140 ft', 'diff' => 'Medium',       'dur' => '6-7 Hours',  'meet' => 'Apizaco Center'],
+            'canada'        => ['alt' => '12,140 ft', 'diff' => 'Medium',       'dur' => '6-7 Hours',  'meet' => 'Santa Ana Chiautempan'],
             'aves'          => ['alt' => '10,500 ft', 'diff' => 'Easy',         'dur' => '4-5 Hours',  'meet' => 'Vigilance Post'],
             'niebla_baja'   => ['alt' => '10,200 ft', 'diff' => 'Easy',         'dur' => '3-4 Hours',  'meet' => 'IMSS Parking'],
-            'vuelo_nubes'   => ['alt' => '13,120 ft', 'diff' => 'Advanced',     'dur' => '8-9 Hours',  'meet' => 'Apizaco Center'],
-            'amanecer_n'    => ['alt' => '13,780 ft', 'diff' => 'Advanced',     'dur' => '9-10 Hours', 'meet' => 'Apizaco Center'],
+            'vuelo_nubes'   => ['alt' => '13,120 ft', 'diff' => 'Advanced',     'dur' => '8-9 Hours',  'meet' => 'Santa Ana Chiautempan'],
+            'amanecer_n'    => ['alt' => '13,780 ft', 'diff' => 'Advanced',     'dur' => '9-10 Hours', 'meet' => 'Santa Ana Chiautempan'],
             'sendero_m'     => ['alt' => '11,150 ft', 'diff' => 'Medium',       'dur' => '5-6 Hours',  'meet' => 'San José Teacalco']
         ],
 

@@ -1,12 +1,9 @@
 import { initNavigation } from './modules/nav.js';
+import { initCarousel } from './modules/carousel.js';
+import { initToursFilter } from './modules/tours.js';
 
-// Esperamos a que el DOM esté cargado para ejecutar los módulos
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // Inicializar Navegación
     initNavigation();
-
-    // Aquí irán futuras inicializaciones:
-    // initScrollReveal();
-    // initAdManager(); 
+    initCarousel();
+    initToursFilter(); 
 });

@@ -4,32 +4,29 @@
 .main-header {
     width: 100%; 
     position: relative;
-    min-height: 600px;
-    background-image: linear-gradient($overlay, $overlay), url('../img/hero-malintzin.jpg');
-    background-size: cover;
-    background-position: center;
+    height: 600px;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    background-color: $black;
 
-    // === NAVEGACIÓN ===
+    // === NAVEGACIÓN (Restaurada) ===
     .nav {
         width: 100%;
         height: 100px; 
-        position: fixed; // <--- Solo deja FIXED (borra el position: absolute)
+        position: fixed; 
         top: 0;
         left: 0;
         z-index: 2000; 
         background: linear-gradient(to bottom, rgba($black, 0.7) 0%, transparent 100%);
         transition: background $transition-fast, height $transition-fast, box-shadow $transition-fast;
         
-        // === EL EFECTO AL HACER SCROLL ===
         &.scrolled {
-            background: rgba($black, 0.5); // Fondo sólido de tu marca
-            height: 80px; // Se encoge un poco para no estorbar la lectura
-            box-shadow: 0 4px 10px rgba($black, 0.3); // Sombra elegante
+            background: rgba($black, 0.5); 
+            height: 80px; 
+            box-shadow: 0 4px 10px rgba($black, 0.3); 
         }
 
-        // === 1. EL SECRETO DEL CENTRADO ===
         &__container {
             display: flex;
             justify-content: space-between;
@@ -46,16 +43,14 @@
             font-weight: 700;
             color: $white;
             letter-spacing: 1px;
-
             img { width: 45px; }
         }
 
         &__list {
-            display: none; // Oculto en móvil
-
+            display: none;
             @include breakpoint(tablet) {
                 display: flex;
-                gap: 4rem; // Más separación (look premium)
+                gap: 4rem;
             }
         }
 
@@ -69,7 +64,6 @@
             position: relative;
             padding-bottom: 6px;
 
-            // Línea inferior animada elegante
             &::after {
                 content: '';
                 position: absolute;
@@ -87,7 +81,6 @@
             }
         }
 
-        // Estilo para ES / EN
         &__lang {
             display: flex;
             gap: 0.5rem;
@@ -95,10 +88,9 @@
             font-size: 1.2rem;
             font-weight: 600;
 
-            // === AGREGA ESTO PARA MÓVIL ===
             @include mobile {
-                justify-content: center; // Centra perfectamente el ES / EN
-                margin-top: 1rem; // Le da un respirito de los otros enlaces
+                justify-content: center;
+                margin-top: 1rem;
             }
 
             a {
@@ -108,18 +100,16 @@
             span { color: rgba($white, 0.4); }
         }
 
-        // === 2. EL SECRETO DEL SÁNDWICH ===
         &__toggle {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 40px;
             height: 40px;
-            z-index: 2000; // Para que quede por encima del menú al abrirse
+            z-index: 2000;
 
             @include breakpoint(tablet) { display: none; }
 
-            // Dibujando las 3 líneas con CSS
             .nav__burger {
                 width: 25px;
                 height: 2px;
@@ -136,12 +126,11 @@
                     left: 0;
                     transition: transform $transition-fast;
                 }
-
                 &::before { top: -8px; }
                 &::after { top: 8px; }
             }
         }
-        // Animación de la X para el botón sándwich
+
         &__toggle.is-active .nav__burger {
             background-color: transparent;
             &::before { transform: translateY(8px) rotate(45deg); }
@@ -149,7 +138,7 @@
         }
     }
 
-    // === HERO CONTENT ===
+    // === HERO CONTENT (Restaurado) ===
     .hero {
         flex: 1;
         display: flex;
@@ -157,6 +146,8 @@
         justify-content: center;
         text-align: center;
         padding-top: 100px;
+        position: relative;
+        z-index: 10;
 
         &__content {
             max-width: 800px;
@@ -209,43 +200,72 @@
     }
 }
 
-// === ESTILOS DEL MENÚ MÓVIL ===
+// === SISTEMA DE VIDEO (Capa de fondo) ===
+.hero__video-container {
+    position: absolute;
+    inset: 0;
+    height: 600px; // Tu altura fija
+    background-color: $black; 
+    background: $black;
+    
+    // === ESTO ELIMINA EL PARPADEO ===
+    background-image: url('../img/hero-malintzin.jpg'); 
+    background-size: cover;
+    background-position: center bottom;
+    // ===============================
+    
+    overflow: hidden;
+    z-index: 0;
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba($black, 0.6) 0%, rgba($black, 0.3) 50%, rgba($black, 0.7) 100%);
+        z-index: 2;
+        pointer-events: none;
+    }
+}
+
+.hero__video {
+    position: absolute;
+    inset: 0; 
+    width: 100%;
+    height: 100%;
+    
+    // === ENCUADRE CENTRADO ===
+    object-fit: cover;
+    object-position: center; // Centro-Centro 
+    // =========================
+
+    opacity: 0;
+    z-index: 1; // Base
+    transition: opacity 1.2s ease-in-out;
+
+    &.active {
+        opacity: 1;
+        z-index: 2; // El video activo se pone encima del anterior
+    }
+}
+
+// === MENÚ MÓVIL (Restaurado) ===
 @include mobile {
     .nav__menu {
         position: fixed;
-        top: -100vh; // Lo escondemos una pantalla completa hacia arriba
+        top: -100vh;
         left: 0;
         width: 100%;
-        height: 350px; // Ocupa TODA la pantalla
-        
-        // Un fondo casi negro muy elegante con efecto cristal
+        height: 350px; 
         background-color: rgba(#050505, 0.95); 
         backdrop-filter: blur(10px); 
-        
-        // Centramos todo el contenido usando Flexbox
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center; // Centra los links verticalmente en la pantalla
-        
+        justify-content: center;
         transition: top $transition-slow ease-in-out;
-        z-index: 1500; // Queda debajo del botón de la X (que tiene 2000)
+        z-index: 1500;
 
-        &.show-menu {
-            top: 0; // Baja a cubrir la pantalla
-        }
-
-        .nav__list {
-            display: flex;
-            flex-direction: column;
-            align-items: center; // Obliga a que todos los <li> se centren
-            gap: 3.5rem; // Más espacio para que no se vean apretados
-            width: 100%;
-        }
-        
-        // Hacemos la letra un poco más grande en móvil para que luzca mejor
-        .nav__link {
-            font-size: 1.5rem; 
-        }
+        &.show-menu { top: 0; }
+        .nav__list { display: flex; flex-direction: column; align-items: center; gap: 3.5rem; width: 100%; }
+        .nav__link { font-size: 1.5rem; }
     }
 }

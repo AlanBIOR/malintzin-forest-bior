@@ -30,5 +30,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
 
     <link rel="manifest" href="assets/img/favicon/site.webmanifest">
+    <script type="module" src="assets/js/main.js"></script>
 </head>
 <body>

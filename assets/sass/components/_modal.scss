@@ -1,0 +1,263 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "sass:color";
+
+.modal {
+    position: fixed;
+    inset: 0; // Ocupa toda la ventana para el fondo oscuro
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black, 0.85); 
+    backdrop-filter: blur(12px); // Efecto esmerilado en el fondo
+    display: flex;
+    align-items: center;    // Centrado vertical
+    justify-content: center; // Centrado horizontal
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity $transition-fast, visibility $transition-fast;
+
+    &.is-visible {
+        opacity: 1;
+        visibility: visible;
+        
+        .modal-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+}
+
+.modal-content.modal-full-hero {
+    position: relative;
+    // Aquí definimos el tamaño del Pop-up centrado
+    width: 90%;  // Casi toda la pantalla en móvil
+    height: 85%; // Casi toda la altura en móvil
+    max-width: 1200px; // Límite de ancho en desktop
+    max-height: 800px; // Límite de alto en desktop
+    
+    background-color: $color-primary;
+    border-radius: 20px; // Bordes redondeados modernos
+    overflow: hidden; // Para que la imagen no se salga de las esquinas
+    display: flex;
+    flex-direction: column;
+    
+    // Animación de entrada
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all $transition-slow;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+
+    @include breakpoint(tablet) {
+        width: 80%;
+        height: 90%;
+    }
+}
+
+// Botón de cerrar tipo "X" arriba a la derecha
+.close-modal {
+    position: fixed; // Fijo para que no se mueva con el scroll
+    top: 2rem;
+    right: 2rem;
+    font-size: 2.5rem;
+    color: $white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 50; // Por encima de todo
+    line-height: 1;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    transition: transform $transition-fast, opacity $transition-fast;
+    opacity: 0.7;
+
+    &:hover {
+        transform: scale(1.1) rotate(90deg); // Pequeño giro elegante
+        opacity: 1;
+    }
+
+    @include mobile {
+        top: 1rem;
+        right: 1.5rem;
+        font-size: 2rem;
+    }
+}
+
+// === CAPA DE IMAGEN DE FONDO INMERSIVA ===
+.modal-hero-bg {
+    position: fixed; // Fija detrás del contenido
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    // Overlay gradiente para legibilidad (Igual que en Lumajang)
+    .modal-overlay {
+        position: absolute;
+        inset: 0;
+        // Gradiente oscuro de abajo hacia arriba
+        background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.6) 100%);
+    }
+}
+
+// === CONTENEDOR DE CONTENIDO PRINCIPAL ===
+.modal-container {
+    position: relative;
+    z-index: 2; // Sobre la imagen de fondo
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 6rem 2rem 4rem; // Espacio para la X y footer
+
+    @include breakpoint(tablet) {
+        padding: 8rem 5vw 4rem; // 5vw de padding lateral para aire en desktop
+    }
+
+    @include breakpoint(desktop) {
+        padding: 10rem 10vw 4rem; // Más aire en desktop
+    }
+}
+
+// Contenido central (Título y Subtítulo)
+.modal-main-content {
+    flex: 1; // Toma el espacio disponible
+    display: flex;
+    flex-direction: column;
+    justify-content: center; // Centra verticalmente
+    align-items: flex-start; // Alinea a la izquierda (como Lumajang)
+    max-width: 800px;
+    margin: 0 auto; // Centra el bloque de texto
+
+    @include mobile {
+        justify-content: flex-start; // En móvil, arriba para dar espacio a stats
+        padding-top: 2rem;
+    }
+
+    .hero-title {
+        font-family: $font-title;
+        // Tipografía gigante fluida (clamp)
+        font-size: clamp(3rem, 10vw, 7rem); 
+        color: $white;
+        line-height: 1.1;
+        margin-bottom: 2rem;
+        text-transform: uppercase; // Mayúsculas para look inmersivo
+        letter-spacing: -2px;
+        text-shadow: 0 4px 10px rgba(0,0,0,0.4);
+
+        @include mobile {
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+    }
+
+    .hero-subtitle {
+        font-size: clamp(1rem, 1.5vw, 1.25rem); // Subtítulo elegante y legible
+        color: rgba($white, 0.9); // Blanco ligeramente translúcido
+        line-height: 1.8;
+        max-width: 600px;
+        margin-bottom: 3rem;
+
+        @include mobile {
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+// Botón "Reservar" estilo Discover (Más estilizado)
+.modal-actions {
+    .btn-discover {
+        display: inline-block;
+        padding: 1.2rem 3rem;
+        background-color: transparent;
+        border: 2px solid $white;
+        color: $white;
+        border-radius: 100px; // Botón totalmente redondeado
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+        text-decoration: none;
+        transition: all $transition-fast;
+
+        &:hover {
+            background-color: $white;
+            color: $color-primary; // Cambia a verde bosque al hover
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+    }
+}
+
+// === FOOTER DE ESTADÍSTICAS (01, 02, 03) ===
+.modal-footer-stats {
+    display: grid;
+    // Layout responsivo: 1 columna en móvil, 2 en tablet, 4 en desktop
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    width: 100%;
+    margin-top: auto; // Pega el footer a la base del contenedor
+    border-top: 1px solid rgba($white, 0.2); // Línea sutil de Lumajang
+    padding-top: 2rem;
+
+    @include breakpoint(tablet) {
+        gap: 3rem;
+    }
+
+    @include breakpoint(desktop) {
+        grid-template-columns: repeat(4, 1fr); // 4 columnas en desktop
+        gap: 4vw;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    @include mobile {
+        grid-template-columns: 1fr; // 1 columna en móvil para que no se amontone
+        gap: 1.5rem;
+    }
+
+    .stat-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+
+        .stat-number {
+            font-family: $font-title;
+            font-size: 2rem;
+            color: rgba($white, 0.4); // Número difuminado de Lumajang
+            line-height: 1;
+            width: 50px; // Ancho fijo para alineación
+            text-align: right;
+        }
+
+        .stat-info {
+            flex: 1;
+
+            h4 {
+                font-family: $font-main;
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: rgba($white, 0.9);
+                margin-bottom: 0.3rem;
+                text-transform: uppercase; // Etiquetas en mayúscula
+                letter-spacing: 1px;
+            }
+
+            p {
+                font-size: 0.9rem;
+                color: rgba($white, 0.7);
+                line-height: 1.5;
+            }
+        }
+    }
+}
+
+// Bloquear scroll del body cuando el modal está abierto
+body.modal-open {
+    overflow: hidden;
+}

@@ -27,34 +27,77 @@ $texts = [
 
         // Nombres de Rutas
         'rutas' => [
-            'cima' => 'Cima Principal', 'arenal' => 'El Arenal', 'bosque' => 'Bosque de Coníferas',
-            'cresta' => 'Cresta del Volcán', 'base' => 'Base de Montaña', 'mirador' => 'El Mirador',
-            'nocturna' => 'Ruta Nocturna', 'nieve_alta' => 'Nieve Alta', 'hielo_cristal' => 'Hielo de Cristal',
-            'refugio' => 'Ruta al Refugio', 'pico_nieve' => 'Pico Nevado', 'valle_frio' => 'Valle Frío',
-            'canada' => 'La Cañada', 'aves' => 'Avistamiento de Aves', 'niebla_baja' => 'Niebla del Bosque',
-            'vuelo_nubes' => 'Vuelo de Nubes', 'amanecer_n' => 'Amanecer Infinito', 'sendero_m' => 'Sendero Místico'
+            'cima'          => 'Cima Principal',
+            'arenal'        => 'El Arenal',
+            'bosque'        => 'Bosque de Coníferas',
+            'cresta'        => 'Cresta del Volcán',
+            'base'          => 'Base de Montaña',
+            'mirador'       => 'El Mirador',
+            'nocturna'      => 'Ruta Nocturna',
+            'nieve_alta'    => 'Nieve Alta',
+            'hielo_cristal' => 'Hielo de Cristal',
+            'refugio'       => 'Ruta al Refugio',
+            'pico_nieve'    => 'Pico Nevado',
+            'valle_frio'    => 'Valle Frío',
+            'canada'        => 'La Cañada',
+            'aves'          => 'Avistamiento de Aves',
+            'niebla_baja'   => 'Niebla del Bosque',
+            'vuelo_nubes'   => 'Vuelo de Nubes',
+            'amanecer_n'    => 'Amanecer Infinito',
+            'sendero_m'     => 'Sendero Místico'
         ],
 
         // Descripciones para Modal
         'desc' => [
-            'cima' => 'Una caminata exigente hasta el punto más alto de Tlaxcala.',
-            'arenal' => 'Cruza los famosos arenales, un reto de resistencia y técnica.',
-            'bosque' => 'Explora la flora local en un sendero rodeado de pinos centenarios.',
-            'cresta' => 'Recorrido por la cresta con vistas espectaculares a los volcanes.',
-            'base' => 'Ideal para principiantes que quieren conocer la falda de la montaña.',
-            'mirador' => 'Punto fotográfico perfecto para ver el amanecer.',
-            'nocturna' => 'Aventura bajo las estrellas en paisajes cubiertos de blanco.',
-            'nieve_alta' => 'Senderismo técnico en zonas de nieve profunda.',
-            'hielo_cristal' => 'Explora las formaciones de hielo únicas de la temporada.',
-            'refugio' => 'Ruta segura hacia los refugios de montaña durante el invierno.',
-            'pico_nieve' => 'Ascenso invernal con equipo especializado y guías expertos.',
-            'valle_frio' => 'Caminata por valles nevados con vistas de postal.',
-            'canada' => 'Fenómeno natural donde las nubes quedan bajo tus pies.',
-            'aves' => 'Observación de especies locales volando sobre la niebla.',
-            'niebla_baja' => 'Caminata mística entre la bruma del bosque húmedo.',
-            'vuelo_nubes' => 'Puntos altos diseñados para observar el mar de nubes.',
-            'amanecer_n' => 'El sol saliendo sobre un colchón infinito de nubes blancas.',
-            'sendero_m' => 'Ruta panorámica por la zona media de la montaña.'
+            'cima'          => 'Conquista el techo de Tlaxcala y toca el cielo a 4,420 metros sobre el nivel del mar.',
+            'arenal'        => 'Un desafío épico entre ceniza volcánica y paisajes que parecen sacados de otro planeta.',
+            'bosque'        => 'Sumérgete en la paz de senderos ancestrales custodiados por pinos centenarios y aire puro.',
+            'cresta'        => 'Camina por el filo de la montaña con las vistas más espectaculares de los volcanes de México.',
+            'base'          => 'El inicio perfecto para tu aventura: conoce las faldas de la Malintzin y su vibrante biodiversidad.',
+            'mirador'       => 'El punto de encuentro entre la tierra y el horizonte; ideal para capturar la magia del amanecer.',
+            'nocturna'      => 'Bajo el manto de la vía láctea, descubre cómo la nieve brilla con luz propia bajo la luna.',
+            'nieve_alta'    => 'Explora la pureza del invierno en un recorrido técnico diseñado para los verdaderos amantes del frío.',
+            'hielo_cristal' => 'Contempla la belleza efímera de las formaciones de hielo que solo el invierno profundo regala.',
+            'refugio'       => 'Un escape seguro y acogedor en medio de la inmensidad blanca de la montaña invernal.',
+            'pico_nieve'    => 'Ascenso técnico a la cumbre invernal: donde el esfuerzo se premia con un paisaje infinito.',
+            'valle_frio'    => 'Camina por valles silenciosos cubiertos de blanco, un escenario de postal en cada paso.',
+            'canada'        => 'Observa el mundo desaparecer bajo un manto blanco en este fenómeno natural único.',
+            'aves'          => 'Sigue el vuelo de las especies locales en un ecosistema donde la niebla es el hogar de la vida.',
+            'niebla_baja'   => 'Una travesía mística entre la bruma, donde el bosque revela sus secretos a cada paso.',
+            'vuelo_nubes'   => 'El mirador definitivo para sentir que caminas sobre un océano de nubes infinitas.',
+            'amanecer_n'    => 'Despierta tus sentidos con el primer rayo de sol iluminando un colchón de nubes blancas.',
+            'sendero_m'     => 'Un recorrido panorámico diseñado para absorber la energía y la paz de la media montaña.'
+        ],
+
+        'modal_stat_alt'  => 'Altitud',
+        'modal_stat_diff' => 'Dificultad',
+        'modal_stat_dur'  => 'Duración',
+        'modal_stat_meet' => 'Encuentro',
+
+        'rutas_data' => [
+            // La Malinche
+            'cima'          => ['alt' => '4,420 msnm', 'diff' => 'Avanzado',   'dur' => '8-10 Horas', 'meet' => 'Centro Apizaco'],
+            'arenal'        => ['alt' => '3,900 msnm', 'diff' => 'Intermedio', 'dur' => '6-7 Horas',  'meet' => 'San José Teacalco'],
+            'bosque'        => ['alt' => '3,100 msnm', 'diff' => 'Baja',       'dur' => '3-4 Horas',  'meet' => 'Caseta de Vigilancia'],
+            'cresta'        => ['alt' => '4,100 msnm', 'diff' => 'Avanzado',   'dur' => '7-8 Horas',  'meet' => 'Centro Apizaco'],
+            'base'          => ['alt' => '3,000 msnm', 'diff' => 'Baja',       'dur' => '2-3 Horas',  'meet' => 'Estacionamiento IMSS'],
+            'mirador'       => ['alt' => '3,400 msnm', 'diff' => 'Media',      'dur' => '4-5 Horas',  'meet' => 'Caseta de Vigilancia'],
+            
+            // Rutas Nevadas
+            'nocturna'      => ['alt' => '3,800 msnm', 'diff' => 'Media',      'dur' => '5-6 Horas',  'meet' => 'Centro Apizaco'],
+            'nieve_alta'    => ['alt' => '4,200 msnm', 'diff' => 'Experto',    'dur' => '9-11 Horas', 'meet' => 'Centro Apizaco'],
+            'hielo_cristal' => ['alt' => '4,000 msnm', 'diff' => 'Avanzado',   'dur' => '7-8 Horas',  'meet' => 'San José Teacalco'],
+            'refugio'       => ['alt' => '3,100 msnm', 'diff' => 'Baja',       'dur' => '3-4 Horas',  'meet' => 'Estacionamiento IMSS'],
+            'pico_nieve'    => ['alt' => '4,420 msnm', 'diff' => 'Experto',    'dur' => '10-12 Horas','meet' => 'Centro Apizaco'],
+            'valle_frio'    => ['alt' => '3,500 msnm', 'diff' => 'Media',      'dur' => '5-6 Horas',  'meet' => 'San José Teacalco'],
+            
+            // Mar de Nubes
+            'canada'        => ['alt' => '3,700 msnm', 'diff' => 'Media',      'dur' => '6-7 Horas',  'meet' => 'Centro Apizaco'],
+            'aves'          => ['alt' => '3,200 msnm', 'diff' => 'Baja',       'dur' => '4-5 Horas',  'meet' => 'Caseta de Vigilancia'],
+            'niebla_baja'   => ['alt' => '3,100 msnm', 'diff' => 'Baja',       'dur' => '3-4 Horas',  'meet' => 'Estacionamiento IMSS'],
+            'vuelo_nubes'   => ['alt' => '4,000 msnm', 'diff' => 'Avanzado',   'dur' => '8-9 Horas',  'meet' => 'Centro Apizaco'],
+            'amanecer_n'    => ['alt' => '4,200 msnm', 'diff' => 'Avanzado',   'dur' => '9-10 Horas', 'meet' => 'Centro Apizaco'],
+            'sendero_m'     => ['alt' => '3,400 msnm', 'diff' => 'Media',      'dur' => '5-6 Horas',  'meet' => 'San José Teacalco']
         ],
 
         // Testimonios
@@ -108,34 +151,77 @@ $texts = [
 
         // Route Names
         'rutas' => [
-            'cima' => 'Main Summit', 'arenal' => 'The Sandy Slopes', 'bosque' => 'Coniferous Forest',
-            'cresta' => 'Volcano Ridge', 'base' => 'Mountain Base', 'mirador' => 'The Lookout',
-            'nocturna' => 'Night Route', 'nieve_alta' => 'Deep Snow Trek', 'hielo_cristal' => 'Crystal Ice',
-            'refugio' => 'Refuge Path', 'pico_nieve' => 'Snowy Peak', 'valle_frio' => 'Cold Valley',
-            'canada' => 'The Canyon', 'aves' => 'Bird Watching', 'niebla_baja' => 'Forest Mist',
-            'vuelo_nubes' => 'Cloud Flight', 'amanecer_n' => 'Infinite Sunrise', 'sendero_m' => 'Mystic Trail'
+            'cima'          => 'Main Summit',
+            'arenal'        => 'The Sandy Slopes',
+            'bosque'        => 'Coniferous Forest',
+            'cresta'        => 'Volcano Ridge',
+            'base'          => 'Mountain Base',
+            'mirador'       => 'The Lookout',
+            'nocturna'      => 'Night Route',
+            'nieve_alta'    => 'Deep Snow Trek',
+            'hielo_cristal' => 'Crystal Ice',
+            'refugio'       => 'Refuge Path',
+            'pico_nieve'    => 'Snowy Peak',
+            'valle_frio'    => 'Cold Valley',
+            'canada'        => 'The Canyon',
+            'aves'          => 'Bird Watching',
+            'niebla_baja'   => 'Forest Mist',
+            'vuelo_nubes'   => 'Cloud Flight',
+            'amanecer_n'    => 'Infinite Sunrise',
+            'sendero_m'     => 'Mystic Trail'
         ],
 
         // Modal Descriptions
         'desc' => [
-            'cima' => 'A demanding hike to the highest point in Tlaxcala.',
-            'arenal' => 'Cross the famous sand slopes, a challenge of endurance.',
-            'bosque' => 'Explore the local flora in a trail surrounded by ancient pines.',
-            'cresta' => 'Ridge tour with spectacular views of the volcanoes.',
-            'base' => 'Perfect for beginners who want to explore the mountainside.',
-            'mirador' => 'Perfect photographic spot to watch the sunrise.',
-            'nocturna' => 'Adventure under the stars in white-covered landscapes.',
-            'nieve_alta' => 'Technical hiking in deep snow areas.',
-            'hielo_cristal' => 'Explore the unique ice formations of the season.',
-            'refugio' => 'Safe route to the mountain shelters during winter.',
-            'pico_nieve' => 'Winter ascent with specialized equipment and expert guides.',
-            'valle_frio' => 'Hiking through snowy valleys with postcard views.',
-            'canada' => 'Natural phenomenon where clouds stay beneath your feet.',
-            'aves' => 'Observation of local species flying over the fog.',
-            'niebla_baja' => 'Mystical hike through the humid forest mist.',
-            'vuelo_nubes' => 'High points designed to observe the sea of clouds.',
-            'amanecer_n' => 'Sunrise over an infinite blanket of white clouds.',
-            'sendero_m' => 'Panoramic route through the middle zone of the mountain.'
+            'cima'          => 'Conquer Tlaxcala’s highest peak and touch the sky at 4,420 meters above sea level.',
+            'arenal'        => 'An epic challenge through volcanic sand and landscapes that look like another planet.',
+            'bosque'        => 'Immerse yourself in the peace of ancient trails guarded by centuries-old pines and fresh air.',
+            'cresta'        => 'Walk along the mountain’s edge with the most spectacular views of Mexico’s volcanoes.',
+            'base'          => 'The perfect start to your adventure: discover Malintzin’s slopes and vibrant biodiversity.',
+            'mirador'       => 'The meeting point of earth and horizon; ideal for capturing the magic of the sunrise.',
+            'nocturna'      => 'Under the Milky Way, discover how the snow glows in the moonlight.',
+            'nieve_alta'    => 'Explore winter’s purity on a technical trek designed for true cold-weather lovers.',
+            'hielo_cristal' => 'Behold the ephemeral beauty of ice formations that only deep winter can provide.',
+            'refugio'       => 'A safe and cozy escape in the midst of the white vastness of the winter mountain.',
+            'pico_nieve'    => 'Technical winter summit ascent: where effort is rewarded with infinite landscapes.',
+            'valle_frio'    => 'Walk through silent white valleys, a postcard-perfect scenery at every step.',
+            'canada'        => 'Watch the world disappear beneath a white blanket in this unique natural phenomenon.',
+            'aves'          => 'Track local bird species in an ecosystem where the mist is the home of life.',
+            'niebla_baja'   => 'A mystical journey through the haze, where the forest reveals its secrets at every turn.',
+            'vuelo_nubes'   => 'The ultimate lookout to feel like you’re walking on an ocean of infinite clouds.',
+            'amanecer_n'    => 'Awaken your senses with the first ray of sun illuminating a blanket of white clouds.',
+            'sendero_m'     => 'A panoramic route designed to absorb the energy and peace of the mid-mountain.'
+        ],
+
+        'modal_stat_alt'  => 'Altitude',
+        'modal_stat_diff' => 'Difficulty',
+        'modal_stat_dur'  => 'Duration',
+        'modal_stat_meet' => 'Meeting Point',
+
+        'rutas_data' => [
+            // La Malinche
+            'cima'          => ['alt' => '14,500 ft', 'diff' => 'Advanced',     'dur' => '8-10 Hours', 'meet' => 'Apizaco Center'],
+            'arenal'        => ['alt' => '12,800 ft', 'diff' => 'Intermediate', 'dur' => '6-7 Hours',  'meet' => 'San José Teacalco'],
+            'bosque'        => ['alt' => '10,200 ft', 'diff' => 'Easy',         'dur' => '3-4 Hours',  'meet' => 'Vigilance Post'],
+            'cresta'        => ['alt' => '13,450 ft', 'diff' => 'Advanced',     'dur' => '7-8 Hours',  'meet' => 'Apizaco Center'],
+            'base'          => ['alt' => '9,850 ft',  'diff' => 'Easy',         'dur' => '2-3 Hours',  'meet' => 'IMSS Parking'],
+            'mirador'       => ['alt' => '11,150 ft', 'diff' => 'Medium',       'dur' => '4-5 Hours',  'meet' => 'Vigilance Post'],
+            
+            // Snowy Routes
+            'nocturna'      => ['alt' => '12,450 ft', 'diff' => 'Medium',       'dur' => '5-6 Hours',  'meet' => 'Apizaco Center'],
+            'nieve_alta'    => ['alt' => '13,780 ft', 'diff' => 'Expert',       'dur' => '9-11 Hours', 'meet' => 'Apizaco Center'],
+            'hielo_cristal' => ['alt' => '13,120 ft', 'diff' => 'Advanced',     'dur' => '7-8 Hours',  'meet' => 'San José Teacalco'],
+            'refugio'       => ['alt' => '10,200 ft', 'diff' => 'Easy',         'dur' => '3-4 Hours',  'meet' => 'IMSS Parking'],
+            'pico_nieve'    => ['alt' => '14,500 ft', 'diff' => 'Expert',       'dur' => '10-12 Hours','meet' => 'Apizaco Center'],
+            'valle_frio'    => ['alt' => '11,480 ft', 'diff' => 'Medium',       'dur' => '5-6 Hours',  'meet' => 'San José Teacalco'],
+            
+            // Sea of Clouds
+            'canada'        => ['alt' => '12,140 ft', 'diff' => 'Medium',       'dur' => '6-7 Hours',  'meet' => 'Apizaco Center'],
+            'aves'          => ['alt' => '10,500 ft', 'diff' => 'Easy',         'dur' => '4-5 Hours',  'meet' => 'Vigilance Post'],
+            'niebla_baja'   => ['alt' => '10,200 ft', 'diff' => 'Easy',         'dur' => '3-4 Hours',  'meet' => 'IMSS Parking'],
+            'vuelo_nubes'   => ['alt' => '13,120 ft', 'diff' => 'Advanced',     'dur' => '8-9 Hours',  'meet' => 'Apizaco Center'],
+            'amanecer_n'    => ['alt' => '13,780 ft', 'diff' => 'Advanced',     'dur' => '9-10 Hours', 'meet' => 'Apizaco Center'],
+            'sendero_m'     => ['alt' => '11,150 ft', 'diff' => 'Medium',       'dur' => '5-6 Hours',  'meet' => 'San José Teacalco']
         ],
 
         // Testimonios

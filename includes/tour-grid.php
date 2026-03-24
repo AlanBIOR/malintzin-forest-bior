@@ -1,6 +1,6 @@
 <div class="hexagon-container">
     <?php 
-    // 1. Definimos las categorías para que el bucle sepa qué buscar
+    // 1. Definimos las categorías
     $categorias = ['malinche', 'rutas-nevadas', 'mar-nubes'];
     
     foreach($categorias as $cat_slug): ?>
@@ -22,9 +22,14 @@
                         $id = $ids_cat[$cursor];
                         $data = $items_cat[$id];
                         
-                        // 2. OBTENEMOS TRADUCCIONES DINÁMICAS (Usando 'desc' para que coincida con languages.php)
+                        // 2. OBTENEMOS TRADUCCIONES Y DATOS TÉCNICOS
                         $nombre = $texts[$lang]['rutas'][$id] ?? $id;
                         $desc_modal = $texts[$lang]['desc'][$id] ?? ''; 
+                        
+                        // Extraemos los stats específicos del tour (Altitud, Dificultad, etc.)
+                        $stats = $texts[$lang]['rutas_data'][$id] ?? [
+                            'alt' => '--', 'diff' => '--', 'dur' => '--', 'meet' => '--'
+                        ];
                         
                         $cursor++;
                     ?>
@@ -35,7 +40,11 @@
                                 <button type="button" class="btn-hex open-tour-modal" 
                                     data-name="<?php echo $nombre; ?>" 
                                     data-desc="<?php echo $desc_modal; ?>" 
-                                    data-img="assets/img/<?php echo $data['img']; ?>">
+                                    data-img="assets/img/<?php echo $data['img']; ?>"
+                                    data-alt="<?php echo $stats['alt']; ?>"
+                                    data-diff="<?php echo $stats['diff']; ?>"
+                                    data-dur="<?php echo $stats['dur']; ?>"
+                                    data-meet="<?php echo $stats['meet']; ?>">
                                     <?php echo __('btn_hex_action'); ?>
                                 </button>
                             </div>

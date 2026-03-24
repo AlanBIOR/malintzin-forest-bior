@@ -1,57 +1,76 @@
+/**
+ * BIOR Web Studio - Tours Module
+ * Maneja el filtrado de categorías y la inyección dinámica de datos en el Modal.
+ */
+
 export const initToursFilter = () => {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const groups = document.querySelectorAll('.category-group');
     const tourTitle = document.getElementById('tour-title');
+    const modal = document.getElementById('tour-modal');
 
     if (!filterBtns.length || !groups.length) return;
 
+    // --- 1. LÓGICA DE FILTRADO ---
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const filter = btn.getAttribute('data-filter');
 
-            // 1. UI: Botón Activo
+            // UI: Botón Activo
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
-            // 2. Título dinámico: Toma el texto del botón presionado
+            // Título dinámico
             if(tourTitle) {
                 tourTitle.innerText = btn.innerText;
             }
 
-            // 3. Filtrado: Mostrar el grupo que coincide con el data-filter
+            // Intercambio de grupos
             groups.forEach(group => {
-                if (group.getAttribute('data-group') === filter) {
-                    group.style.display = 'block';
-                } else {
-                    group.style.display = 'none';
-                }
+                group.style.display = (group.getAttribute('data-group') === filter) ? 'block' : 'none';
             });
         });
     });
 
-    // Lógica del Modal (Popup)
+    // --- 2. LÓGICA DEL MODAL DINÁMICO ---
     document.addEventListener('click', (e) => {
-        // Buscamos si el clic fue en el botón o dentro del botón (por si hay un span)
         const openBtn = e.target.closest('.open-tour-modal');
         
         if (openBtn) {
-            const modal = document.getElementById('tour-modal');
             if (!modal) return;
 
-            // Llenamos el modal con los dataset del botón
+            // Inyectamos los datos básicos
             document.getElementById('modal-title').innerText = openBtn.dataset.name;
             document.getElementById('modal-desc').innerText = openBtn.dataset.desc;
             document.getElementById('modal-img').src = openBtn.dataset.img;
             
+            // Inyectamos las estadísticas dinámicas (Las nuevas piezas del bus de datos)
+            document.getElementById('modal-stat-alt').innerText = openBtn.dataset.alt;
+            document.getElementById('modal-stat-diff').innerText = openBtn.dataset.diff;
+            document.getElementById('modal-stat-dur').innerText = openBtn.dataset.dur;
+            document.getElementById('modal-stat-meet').innerText = openBtn.dataset.meet;
+            
+            // Animación de entrada
             modal.classList.add('is-visible');
-            document.body.style.overflow = 'hidden';
+            document.body.classList.add('modal-open'); // Clase para bloquear scroll en SCSS
         }
 
-        // Cerrar modal: clic en la X o en el fondo oscuro
-        if (e.target.classList.contains('close-modal') || e.target.id === 'tour-modal') {
-            const modal = document.getElementById('tour-modal');
+        // --- 3. LÓGICA DE CIERRE ---
+        // Cerramos si hace clic en la X, en el fondo oscuro (overlay) o presiona Escape
+        const isCloseBtn = e.target.closest('.close-modal');
+        const isOverlay = e.target === modal;
+
+        if (isCloseBtn || isOverlay) {
             modal.classList.remove('is-visible');
-            document.body.style.overflow = 'auto';
+            document.body.classList.remove('modal-open');
+        }
+    });
+
+    // Soporte para cerrar con tecla ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('is-visible')) {
+            modal.classList.remove('is-visible');
+            document.body.classList.remove('modal-open');
         }
     });
 };

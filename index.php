@@ -39,6 +39,8 @@ include 'includes/header.php';
     <?php include 'includes/testimonials.php'; ?>
 </main>
 
+<?php include 'includes/tour-modal.php'; ?>
+
 <?php 
 include 'includes/footer.php'; 
 ?>

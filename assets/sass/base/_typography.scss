@@ -1,0 +1,26 @@
+@use "../abstracts/variables" as *;
+
+body {
+    font-family: $font-main;
+    font-size: 1.6rem; // Equivale a 16px
+    color: $white;
+}
+
+h1, h2, h3 {
+    font-family: $font-title;
+    font-weight: 700;
+}
+
+.section-title {
+    font-size: 3.2rem;
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+}
+
+.section-subtitle {
+    font-size: 1.4rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: $color-secondary;
+}

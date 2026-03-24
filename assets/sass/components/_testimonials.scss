@@ -1,0 +1,80 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.testimonials {
+    padding: 8rem 0;
+    background-image: linear-gradient(rgba($black, 0.8), rgba($black, 0.8)), url('../img/testimonials-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: $white;
+    text-align: center;
+
+    &__header {
+        margin-bottom: 5rem;
+        
+        .section-title {
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: $white; // En esta sección el subtítulo suele ser blanco o muy claro
+            opacity: 0.8;
+        }
+    }
+
+    &__grid {
+        display: grid;
+        gap: 4rem;
+        grid-template-columns: 1fr; // 1 columna en móvil
+
+        @include breakpoint(tablet) {
+            grid-template-columns: repeat(3, 1fr); // 3 columnas en desktop
+            gap: $gap;
+        }
+    }
+}
+
+.testimonial-card {
+    padding: 2rem;
+    transition: transform $transition-fast;
+
+    &__icon {
+        margin-bottom: 2rem;
+        color: $white;
+        opacity: 0.9;
+        
+        svg {
+            width: 45px;
+            height: 45px;
+            
+            @include breakpoint(tablet) {
+                width: 55px;
+                height: 55px;
+            }
+        }
+    }
+
+    &__text {
+        font-family: $font-main;
+        font-size: 1.5rem;
+        font-style: italic;
+        line-height: 1.8;
+        margin-bottom: 2.5rem;
+        position: relative;
+        opacity: 0.9;
+    }
+
+    &__author {
+        font-family: $font-main;
+        font-size: 1.6rem;
+        font-weight: 700;
+        text-transform: capitalize;
+        color: $color-accent; // El azul mar de nubes para resaltar el nombre
+        letter-spacing: 1px;
+    }
+
+    &:hover {
+        transform: translateY(-10px);
+    }
+}

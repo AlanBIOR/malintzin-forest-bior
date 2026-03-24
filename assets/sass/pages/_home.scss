@@ -1,0 +1,88 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// Estilos específicos para la landing de Aventuras Locales MALINTZIN
+.home-page {
+    
+    // El filtro de navegación sobre los hexágonos (USA, Japan, Brasil)
+    .tour-filter {
+        margin-bottom: 1rem;
+        
+        ul {
+            display: flex;
+            gap: 2rem;
+            justify-content: flex-start;
+            
+            li {
+                font-size: 1.8rem;
+                font-weight: 700;
+                cursor: pointer;
+                color: rgba($white, 0.6);
+                transition: $transition-fast;
+                position: relative;
+                padding-bottom: 0.5rem;
+
+                @include mobile {
+                    font-size: 1.4rem;
+                }
+
+                &.active {
+                    color: $white;
+                    
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 40px; // La línea azul corta de la imagen
+                        height: 3px;
+                        background-color: $color-accent;
+                    }
+                }
+
+                &:hover {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    // Ajuste de margen para el título "Featured tour"
+    .section-title-alt {
+        font-family: $font-main;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        margin-bottom: 4rem;
+        opacity: 0.8;
+    }
+}
+
+.tour-section {
+    width: 100%; 
+    position: relative;
+    padding: 3rem 0;
+    background-image: linear-gradient(to bottom, rgba($black, 0.2), rgba($black, 0.8)), url('../img/bosque-difuminado.jpg');
+    background-size: cover;
+    background-position: center;
+
+    // === ESTILO PARA EL FILTRO Y TÍTULO (Para que contrasten) ===
+    .tour-filter ul li {
+        color: rgba($white, 0.7); // Blanco traslúcido para que no se pierda
+        &.active, &:hover {
+            color: $white; // Blanco puro al activar/hover
+            &::after {
+                background-color: $color-secondary; // Tu color dorado/tierra para la línea
+            }
+        }
+    }
+
+    .section-title {
+        color: $white; // Texto blanco puro
+        font-size: 3.5rem;
+        text-shadow: 0 2px 4px rgba($black, 0.5); // Sombra sutil para legibilidad
+        
+        @include mobile {
+            font-size: 2.5rem;
+        }
+    }
+}

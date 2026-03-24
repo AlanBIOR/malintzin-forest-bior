@@ -1,0 +1,38 @@
+// === 1. BREAKPOINTS (Necesarios para tus mixins) ===
+$bp-tablet: 768px;
+$bp-tablet-horizontal: 1024px;
+$bp-desktop: 1200px;
+$bp-desktop-xl: 1400px;
+
+// === 2. COLORES GLOBALES ===
+// Paleta Bosque & Aventura
+$color-primary: #2d4a3e;     // Verde Bosque Profundo
+$color-secondary: #d4a373;   // Café Tierra / Dorado Arena
+$color-accent: #00a8cc;      // Azul Cielo / Mar de Nubes (como los botones de la imagen)
+
+// Neutros
+$white: #ffffff;
+$black: #000000;
+$gray-light: #f4f4f4;
+$gray-dark: #333333;
+$overlay: rgba(0, 0, 0, 0.5); // Para oscurecer fondos de imágenes
+
+// === 3. TIPOGRAFÍA ===
+// Fuente principal (puedes usar Montserrat o Poppins en Google Fonts)
+$font-main: 'Poppins', sans-serif;
+$font-title: 'Playfair Display', serif; // Para h1, h2 (toque elegante)
+
+// Tamaños (Escalables)
+$text-base: 16px;
+$text-sm: 0.875rem;
+$text-lg: 1.25rem;
+$text-xl: 2.5rem;   // Para h1 en Desktop
+
+// === 4. DISEÑO & BORDES ===
+$border-radius: 8px;
+$transition-fast: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Espaciados (Container)
+$container-width: 1200px;
+$gap: 1.5rem;

@@ -1,0 +1,20 @@
+// 1. ABSTRACTS (Variables y Mixins primero)
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+
+// 2. BASE (Reseteo y Tipografía)
+@use 'base/reset';
+@use 'base/typography';
+
+// 3. LAYOUT (Estructura)
+@use 'layout/header';
+@use 'layout/grid';
+@use 'layout/footer';
+
+// 4. COMPONENTS (Cosas pequeñas)
+@use 'components/buttons';
+@use 'components/cards';
+@use 'components/testimonials';
+
+// 5. PAGES
+@use 'pages/home';

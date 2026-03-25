@@ -2,230 +2,152 @@
 @use "../abstracts/mixins" as *;
 
 .gallery-section {
-    padding: 5rem 0;
-    background-color: $black; // Fondo oscuro para resaltar las fotos
+    padding: 8rem 0; // Más espacio para respirar
+    background-color: #1a1a1a; // Un fondo oscuro grisáceo muy elegante
     color: $white;
+    overflow: hidden; // Evita que el 3D rompa el ancho de la página
 
     .section-header {
         margin-bottom: 3rem;
         
         .section-title {
             font-family: $font-title;
-            font-size: clamp(2rem, 5vw, 3rem);
+            // Usando tus variables tipográficas
+            font-size: clamp(2.5rem, 6vw, 4rem); 
             color: $white;
             margin-bottom: 0.5rem;
         }
 
         .section-subtitle {
             font-family: $font-main;
-            color: $color-secondary;
+            color: $color-secondary; // Tu dorado arena
             text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: $text-lg;
+            letter-spacing: 3px; // Espaciado elegante
+            font-size: $text-base;
             font-weight: 600;
         }
     }
 }
 
-.gallery-grid {
-    display: grid;
-    // Auto-fit crea columnas dinámicas de mínimo 280px
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: $gap; // Usa tu variable de 1.5rem
-    margin-bottom: 3rem;
-
-    @include breakpoint(desktop) {
-        grid-template-columns: repeat(3, 1fr); // Forzamos 3 columnas en PC
-    }
-}
-
-.gallery-item {
-    position: relative;
-    border-radius: $border-radius;
-    overflow: hidden;
-    aspect-ratio: 4 / 3; // Mantiene las fotos proporcionadas
-    cursor: pointer;
-    box-shadow: 0 10px 20px rgba($black, 0.3);
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform $transition-slow;
-    }
-
-    .gallery-overlay {
-        position: absolute;
-        inset: 0;
-        background: $overlay; // Variable rgba(0,0,0,0.5)
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        transition: opacity $transition-fast;
-
-        i {
-            color: $white;
-            font-size: 2rem;
-            transform: scale(0.5);
-            transition: transform $transition-fast;
-        }
-    }
-
-    // Efecto Hover
-    &:hover {
-        img {
-            transform: scale(1.1); // Zoom in suave
-        }
-        
-        .gallery-overlay {
-            opacity: 1;
-
-            i {
-                transform: scale(1); // El ícono crece
-            }
-        }
-    }
-
-    // --- LÍMITE DE IMÁGENES EN LA CUADRÍCULA ---
-    display: none; // Oculta todas por defecto
-    &:nth-child(-n+4) { display: block; } // Muestra 4 en móvil
-    @include breakpoint(desktop) {
-        &:nth-child(-n+6) { display: block; } // Muestra 6 en PC
-    }
-}
-
-// Botón de Instagram
-.btn-outline-primary {
+// === ESTILOS DEL BOTÓN AZUL (USANDO TUS VARIABLES) ===
+.btn--outline-accent {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.8rem 2rem;
-    border: 2px solid $color-accent;
+    gap: 0.8rem;
+    padding: 1rem 2.5rem;
+    background-color: transparent;
+    border: 2px solid $color-accent; // Tu azul cian de la imagen
     color: $color-accent;
-    border-radius: 50px;
+    border-radius: 50px; // Súper redondeado
     font-family: $font-main;
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: $text-sm;
     text-decoration: none;
     transition: all $transition-fast;
 
     &:hover {
         background-color: $color-accent;
         color: $white;
+        box-shadow: 0 10px 20px rgba($color-accent, 0.3); // Brillo sutil azul
+        transform: translateY(-3px);
     }
 }
 
-// --- LIGHTBOX MODAL PREMIUM ---
-.gallery-lightbox {
-    display: flex;
-    position: fixed;
-    z-index: 99999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba($black, 0.85); 
-    backdrop-filter: blur(12px); 
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-
-    &.active {
-        opacity: 1;
-        visibility: visible;
+// === ESTILOS DEL SLIDER 3D ===
+.gallery-slide {
+    background-position: center;
+    background-size: cover;
+    width: 320px; 
+    height: 480px; 
+    border-radius: 20px; 
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 25px 60px rgba($black, 0.6); 
+    
+    @include mobile {
+        width: 280px;
+        height: 420px;
     }
 
-    &__content {
-        max-width: 85%;
-        max-height: 75vh;
-        object-fit: contain;
-        border-radius: 12px;
-        box-shadow: 0 30px 60px rgba($black, 0.6);
-        transform: scale(0.95);
-        transition: transform 0.4s ease, opacity 0.3s ease; // Opacidad añadida para el JS
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
-    &.active &__content {
-        transform: scale(1);
-    }
-
-    &__caption {
-        margin-top: 1.5rem;
-        color: $white;
-        font-family: $font-main;
-        font-size: 1.2rem;
-        font-weight: 300;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    &.active &__caption {
-        opacity: 0.9;
-    }
-
-    &__close {
+    &::after {
+        content: '';
         position: absolute;
-        top: 2rem;
-        right: 2rem;
-        color: $white;
-        font-size: 2.5rem;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba($white, 0.1);
-        border-radius: 50%;
-        cursor: pointer;
-        backdrop-filter: blur(4px);
-        transition: all $transition-fast;
-        z-index: 10000;
-
-        &:hover {
-            background: $color-accent;
-            transform: rotate(90deg);
-        }
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(to top, rgba($black, 0.95) 0%, rgba($black, 0) 100%);
+        pointer-events: none;
+        z-index: 1;
     }
 
-    // --- ESTILOS DE LAS FLECHAS ---
-    &__arrow {
+    .slide-info {
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba($white, 0.1);
-        color: $white;
-        border: none;
-        width: 55px;
-        height: 55px;
-        border-radius: 50%;
-        font-size: 1.5rem;
-        cursor: pointer;
-        backdrop-filter: blur(4px);
-        transition: all $transition-fast;
-        z-index: 10001;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        bottom: 2.5rem;
+        left: 2.5rem;
+        z-index: 2;
 
-        &:hover {
-            background: $color-accent;
-            transform: translateY(-50%) scale(1.1); // Crece al pasar el mouse
+        h3 {
+            color: $white;
+            font-family: $font-title; 
+            font-size: 1.6rem; // Un toque más refinado
+            margin-bottom: 0.3rem;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
-        &.left { left: 2rem; }
-        &.right { right: 2rem; }
-
-        @include breakpoint(mobile) {
-            width: 40px; 
-            height: 40px; 
-            font-size: 1.2rem;
-            &.left { left: 0.5rem; }
-            &.right { right: 0.5rem; }
+        p {
+            color: $color-accent; // El azul resalta súper bien aquí
+            font-family: $font-main; 
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
         }
     }
 }
+
+// === FLECHAS DISCRETAS PERO VISIBLES ===
+.swiper-button-prev,
+.swiper-button-next {
+    color: $white; // Blanco puro
+    transition: all $transition-slow; // Transición más suave
+    z-index: 10;
+    width: 45px; // Más pequeñas y sutiles
+    height: 45px;
+    background-color: rgba($white, 0.1); // Fondo tipo cristal casi transparente
+    border: 1px solid rgba($white, 0.2); // Borde súper fino
+    border-radius: 50%;
+    backdrop-filter: blur(8px); 
+
+    &::after {
+        font-size: 1.2rem; // Icono más pequeño
+        font-weight: 400; // Más delgado
+    }
+
+    // Al pasar el mouse, toman la personalidad de la marca
+    &:hover {
+        background-color: $color-accent;
+        border-color: $color-accent;
+        color: $white;
+        transform: scale(1.05); // Crecen muy sutilmente
+    }
+    
+    @include mobile {
+        width: 35px;
+        height: 35px;
+        &::after { font-size: 1rem; }
+    }
+}
+
+.swiper-button-prev { left: 1.5rem; }
+.swiper-button-next { right: 1.5rem; }

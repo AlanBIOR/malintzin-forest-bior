@@ -29,11 +29,6 @@
                         <i class="fab fa-facebook-f"></i>
                     </a>
                 </li>
-                <li>
-                    <a href="https://www.instagram.com/malintzin_forest" target="_blank" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </li>
             </ul>
         </div>
     </div>

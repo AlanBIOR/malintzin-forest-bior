@@ -5,7 +5,19 @@
                 <h2 class="section-title"><?php echo __('contact_title'); ?></h2>
                 <p class="section-subtitle"><?php echo __('contact_subtitle'); ?></p>
                 
-                <form action="#" method="POST" class="bior-form">
+                <?php if (isset($_GET['status'])): ?>
+                    <div class="alert <?php echo $_GET['status'] === 'success' ? 'alert-success' : 'alert-error'; ?>" style="margin-bottom: 1.5rem; padding: 1rem; border-radius: 8px; text-align: center; <?php echo $_GET['status'] === 'success' ? 'background-color: rgba(46, 204, 113, 0.2); color: #2ecc71; border: 1px solid #2ecc71;' : 'background-color: rgba(231, 76, 60, 0.2); color: #e74c3c; border: 1px solid #e74c3c;'; ?>">
+                        <?php 
+                            if ($_GET['status'] === 'success') {
+                                echo "¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.";
+                            } else {
+                                echo "Hubo un error al enviar el mensaje. Por favor, intenta de nuevo o contáctanos por WhatsApp.";
+                            }
+                        ?>
+                    </div>
+                <?php endif; ?>
+
+                <form action="process-contact.php" method="POST" class="bior-form">
                     <div class="form-group">
                         <label for="name"><?php echo __('form_name'); ?></label>
                         <input type="text" id="name" name="name" placeholder="<?php echo __('form_name_ph'); ?>" required>

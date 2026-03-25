@@ -22,7 +22,7 @@
             <p class="hero__copy"><?php echo __('hero_copy'); ?></p>
             
             <div class="hero__actions">
-                <a href="https://wa.me/<?php echo PHONE_2; ?>" class="btn btn--outline" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/52<?php echo PHONE_2; ?>?text=<?php echo urlencode(WA_MSG); ?>" class="btn btn--outline" target="_blank" rel="noopener noreferrer">
                     <?php echo __('btn_book'); ?>
                 </a>
             </div>

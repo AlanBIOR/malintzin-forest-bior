@@ -1,0 +1,7 @@
+# Desactivar la vista de directorios (Seguridad BIOR Web Studio)
+Options -Indexes
+
+# Forzar conexión segura HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

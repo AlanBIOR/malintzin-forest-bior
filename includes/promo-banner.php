@@ -31,7 +31,7 @@
                 </ul>
             </div>
 
-            <a href="https://wa.me/52<?php echo PHONE_2; ?>" class="btn-promo">
+            <a href="https://wa.me/52<?php echo PHONE_2; ?>?text=<?php echo urlencode(WA_MSG . ' Estoy interesado en la promoción de $399 MXN.'); ?>" class="btn-promo" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-whatsapp"></i> <?php echo __('btn_reserve_now'); ?>
             </a>
         </div>

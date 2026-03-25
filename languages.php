@@ -106,16 +106,32 @@ $texts = [
         'testimonials_subtitle' => 'LO QUE NUESTROS AVENTUREROS DICEN',
         'reviews' => [
             [
-                'texto' => 'La vista del mar de nubes desde la cima es algo que no se puede explicar con palabras. ¡Increíble!',
-                'autor' => 'Louis Barrett'
+                'autor' => 'Galilea Martinez Solis', 
+                'texto' => 'Son los mejores la verdad, gracias a Luis Ángel por quedarse conmigo hasta atrás y darme ánimos para seguir! Para la próxima prometo llegar a cumbre!'
             ],
             [
-                'texto' => 'Excelente guía local. Conocen la montaña como la palma de su mano y te hacen sentir seguro siempre.',
-                'autor' => 'Emma Gibson'
+                'autor' => 'Eduardo Fernández', 
+                'texto' => 'Sin duda unos grandes guías. Con ellos hice mi primera cumbre.'
             ],
             [
-                'texto' => 'Fuimos en temporada de nieve y fue la mejor experiencia de mi vida. Todo muy bien organizado.',
-                'autor' => 'Alice Foster'
+                'autor' => 'Yare Adán', 
+                'texto' => 'Excelente equipo, excelentes guías! Tequeme 🫶🏼'
+            ],
+            [
+                'autor' => 'Jorge Sanchez', 
+                'texto' => 'Spr recomendado sin duda excelente, los guías siempre al pendiente de ti y ayudando.'
+            ],
+            [
+                'autor' => 'Atzire Andrade', 
+                'texto' => 'Todo el equipo es muy profesional, la atención es muy personalizada, ampliamente recomendada para grupos de mujeres, es muy seguro.🦋'
+            ],
+            [
+                'autor' => 'Monserrat Breton', 
+                'texto' => 'Sin duda los mejores. Con ellos viví una gran experiencia inigualable. Super recomendados. Nada de esto sería posible sin la experiencia, paciencias y pasión de los guías. Gracias por llevarnos más allá de nuestros límites. Sin duda volvería a repetir con ellos está gran experiencia.'
+            ],
+            [
+                'autor' => 'Day Diaz Pastrana', 
+                'texto' => 'Excelente y confiable servicio!! Gracias Silver y Ángel.'
             ]
         ],
 
@@ -137,7 +153,7 @@ $texts = [
         // --- GALERÍA ---
         'gallery_title'         => 'Galería',
         'gallery_subtitle'      => 'NUESTRAS AVENTURAS EN IMÁGENES',
-        'btn_see_more_ig'       => 'Ver más en Instagram',
+        'btn_see_more_ig'       => 'Ver más en Facebook',
 
         // --- CONTACTO ---
         'contact_title'         => 'Contáctanos',
@@ -262,16 +278,32 @@ $texts = [
         'testimonials_subtitle' => 'WHAT OUR CUSTOMERS SAY',
         'reviews' => [
             [
-                'texto' => 'The view of the sea of clouds from the summit is something that cannot be explained in words. Amazing!',
-                'autor' => 'Louis Barrett'
+                'autor' => 'Galilea Martinez Solis', 
+                'texto' => 'They are honestly the best! Thanks to Luis Ángel for staying with me at the back and encouraging me to keep going. Next time I promise to reach the summit!'
             ],
             [
-                'texto' => 'Excellent local guide. They know the mountain like the back of their hand and make you feel safe.',
-                'autor' => 'Emma Gibson'
+                'autor' => 'Eduardo Fernández', 
+                'texto' => 'Great guides without a doubt. I reached my first summit with them.'
             ],
             [
-                'texto' => 'We went during snow season and it was the best experience of my life. Everything was very well organized.',
-                'autor' => 'Alice Foster'
+                'autor' => 'Yare Adán', 
+                'texto' => 'Excellent team, excellent guides! Love them 🫶🏼'
+            ],
+            [
+                'autor' => 'Jorge Sanchez', 
+                'texto' => 'Highly recommended, excellent service! The guides are always looking out for you and helping.'
+            ],
+            [
+                'autor' => 'Atzire Andrade', 
+                'texto' => 'The entire team is very professional, the attention is very personalized. Highly recommended for women groups, it is very safe.🦋'
+            ],
+            [
+                'autor' => 'Monserrat Breton', 
+                'texto' => 'Without a doubt, the best. I had an unparalleled experience with them. Highly recommended. None of this would be possible without the experience, patience, and passion of the guides. Thank you for taking us beyond our limits. I would definitely repeat this great experience with them.'
+            ],
+            [
+                'autor' => 'Day Diaz Pastrana', 
+                'texto' => 'Excellent and reliable service!! Thanks Silver and Ángel.'
             ]
         ],
 
@@ -293,7 +325,7 @@ $texts = [
         // --- GALERÍA ---
         'gallery_title'         => 'Gallery',
         'gallery_subtitle'      => 'OUR ADVENTURES IN PICTURES',
-        'btn_see_more_ig'       => 'See more on Instagram',
+        'btn_see_more_ig'       => 'See more on Facebook',
 
         // --- CONTACTO ---
         'contact_title'         => 'Contact Us',
@@ -325,24 +357,24 @@ $rutas_assets = [
     // La Malinche
     'cima'          => ['img' => 'cima.jpg',   'cat' => 'malinche'],
     'arenal'        => ['img' => 'arenal.jpg', 'cat' => 'malinche'],
-    'bosque'        => ['img' => 'bosque.jpg', 'cat' => 'malinche'],
-    'cresta'        => ['img' => 'cima.jpg',   'cat' => 'malinche'],
-    'base'          => ['img' => 'arenal.jpg', 'cat' => 'malinche'],
-    'mirador'       => ['img' => 'bosque.jpg', 'cat' => 'malinche'],
+    'bosque'        => ['img' => 'bosque.jpeg', 'cat' => 'malinche'],
+    'cresta'        => ['img' => 'cresta.jpeg',   'cat' => 'malinche'],
+    'base'          => ['img' => 'base.jpeg', 'cat' => 'malinche'],
+    'mirador'       => ['img' => 'mirador.jpeg', 'cat' => 'malinche'],
     
     // Rutas Nevadas
     'nocturna'      => ['img' => 'noche.jpg',  'cat' => 'rutas-nevadas'],
-    'nieve_alta'    => ['img' => 'cima.jpg',   'cat' => 'rutas-nevadas'],
-    'hielo_cristal' => ['img' => 'arenal.jpg', 'cat' => 'rutas-nevadas'],
-    'refugio'       => ['img' => 'bosque.jpg', 'cat' => 'rutas-nevadas'],
-    'pico_nieve'    => ['img' => 'noche.jpg',  'cat' => 'rutas-nevadas'],
-    'valle_frio'    => ['img' => 'canada.jpg', 'cat' => 'rutas-nevadas'],
+    'nieve_alta'    => ['img' => 'nieve_alta.jpeg',   'cat' => 'rutas-nevadas'],
+    'hielo_cristal' => ['img' => 'hielo_cristal.jpeg', 'cat' => 'rutas-nevadas'],
+    'refugio'       => ['img' => 'refugio.jpeg', 'cat' => 'rutas-nevadas'],
+    'pico_nieve'    => ['img' => 'pico_nieve.jpeg',  'cat' => 'rutas-nevadas'],
+    'valle_frio'    => ['img' => 'valle_frio.jpeg', 'cat' => 'rutas-nevadas'],
     
     // Mar de Nubes
     'canada'        => ['img' => 'canada.jpg', 'cat' => 'mar-nubes'],
     'aves'          => ['img' => 'aves.jpg',   'cat' => 'mar-nubes'],
-    'niebla_baja'   => ['img' => 'bosque.jpg', 'cat' => 'mar-nubes'],
-    'vuelo_nubes'   => ['img' => 'cima.jpg',   'cat' => 'mar-nubes'],
-    'amanecer_n'    => ['img' => 'canada.jpg', 'cat' => 'mar-nubes'],
-    'sendero_m'     => ['img' => 'aves.jpg',   'cat' => 'mar-nubes']
+    'niebla_baja'   => ['img' => 'niebla_baja.jpg', 'cat' => 'mar-nubes'],
+    'vuelo_nubes'   => ['img' => 'vuelo_nubes.jpg',   'cat' => 'mar-nubes'],
+    'amanecer_n'    => ['img' => 'amanecer_n.jpg', 'cat' => 'mar-nubes'],
+    'sendero_m'     => ['img' => 'sendero_m.jpg',   'cat' => 'mar-nubes']
 ];

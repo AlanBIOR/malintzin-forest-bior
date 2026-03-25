@@ -15,10 +15,16 @@ define('PHONE_1', '2461086895');
 define('PHONE_2', '2462236424');
 
 // Si quieres un número principal para el botón de reserva general:
-define('PHONE_MAIN', PHONE_1); 
+define('PHONE_MAIN', PHONE_2); 
+
+// Correo principal de contacto
+define('CONTACT_EMAIL', 'contacto@malintzin.bior-studio.com');
 
 // Otros datos de la imagen
 define('TOUR_PRICE', '$399 MXN');
+
+// ---> NUEVO: Mensaje predefinido base para WhatsApp
+define('WA_MSG', '¡Hola! Vengo de su página web y me gustaría recibir más información sobre los tours y ascensos.');
 
 // 2. Crear un helper para imprimir el texto fácilmente
 function __($key) {

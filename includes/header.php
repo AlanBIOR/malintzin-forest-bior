@@ -2,15 +2,16 @@
     <?php include 'includes/nav.php'; ?>
 
     <div class="hero__video-container">
-    <video id="hero-video" 
-           autoplay 
-           muted 
-           playsinline 
-           poster="assets/img/hero-malintzin.jpg" 
-           class="hero__video active"
-           src="assets/video/malintzin-clouds.mp4"> </video>
-    <video id="next-video" muted playsinline class="hero__video"></video>
-</div>
+        <video id="hero-video" 
+               autoplay 
+               muted 
+               playsinline 
+               poster="assets/img/hero-malintzin.webp" 
+               class="hero__video active"
+               src="assets/video/malintzin-clouds.mp4"></video>
+               
+        <video id="next-video" muted playsinline class="hero__video"></video>
+    </div>
 
     <section class="hero">
         <div class="hero__content container">

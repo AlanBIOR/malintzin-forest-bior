@@ -1,4 +1,11 @@
 <footer class="main-footer">
+    
+    <div class="ad-banner-container text-center" style="padding: 2rem 0; display: flex; justify-content: center; align-items: center; flex-direction: column; border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 3rem;">
+        <span style="font-size: 0.7rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">Publicidad Patrocinada</span>
+        
+        <div id="monetag-banner-placeholder" style="min-height: 90px; width: 100%; display: flex; justify-content: center;">
+            </div>
+    </div>
     <div class="container footer-grid">
         
         <div class="footer-info">
@@ -16,7 +23,8 @@
             <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem;">
                 <li><a href="#inicio" class="footer-link--alt"><?php echo __('nav_home'); ?></a></li>
                 <li><a href="#tours" class="footer-link--alt"><?php echo __('nav_locations'); ?></a></li>
-                <li><a href="#promos" class="footer-link--alt"><?php echo __('nav_promo'); ?></a></li> <li><a href="#galeria" class="footer-link--alt"><?php echo __('nav_gallery'); ?></a></li>
+                <li><a href="#promos" class="footer-link--alt"><?php echo __('nav_promo'); ?></a></li> 
+                <li><a href="#galeria" class="footer-link--alt"><?php echo __('nav_gallery'); ?></a></li>
                 <li><a href="#contacto" class="footer-link--alt"><?php echo __('nav_contact'); ?></a></li>
             </ul>
         </div>

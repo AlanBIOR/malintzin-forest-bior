@@ -39,9 +39,20 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
     <link rel="manifest" href="assets/img/favicon/site.webmanifest">
-    <meta name="theme-color" content="#1a1a1a"> 
+    <meta name="theme-color" content="#1a1a1a">
+    
+    <meta name="monetag" content="c4fdf7fe2142fd5530f816660ad2f8cc">
     
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="assets/js/main.js"></script>
+    
+    <script type="module">
+      window.addEventListener('load', () => {
+        // Retrasamos la ejecución 2 segundos para asegurar que el LCP y el FCP estén completos
+        setTimeout(() => {
+            (function(s){s.dataset.zone='10786868',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
+        }, 2000);
+      });
+    </script>
 </head>
 <body>

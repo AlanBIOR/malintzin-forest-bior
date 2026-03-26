@@ -1,9 +1,10 @@
 export const initCarousel = () => {
-    const videoCurrent = document.getElementById('hero-video');
-    const videoNext = document.getElementById('next-video');
+    // Usamos nombres más claros, ya que ambos irán rotando sus roles
+    const domVideo1 = document.getElementById('hero-video');
+    const domVideo2 = document.getElementById('next-video');
     const dots = document.querySelectorAll('.hero__dots .dot');
 
-    if (!videoCurrent || !videoNext) return;
+    if (!domVideo1 || !domVideo2) return;
 
     const videoSources = [
         'assets/video/malintzin-clouds.mp4',
@@ -22,68 +23,63 @@ export const initCarousel = () => {
     const playNext = (targetIndex = null) => {
         if (isTransitioning) return;
         
-        // Manejo de dirección y loop (del 3 al 1 sin errores)
-        let nextIndex;
-        if (targetIndex !== null) {
-            nextIndex = targetIndex;
-        } else {
-            nextIndex = (currentIndex + 1) % videoSources.length;
-        }
-
+        let nextIndex = targetIndex !== null ? targetIndex : (currentIndex + 1) % videoSources.length;
         if (nextIndex === currentIndex && targetIndex !== null) return;
 
         isTransitioning = true;
         
-        // Identificamos roles
-        const hiddenVideo = videoCurrent.classList.contains('active') ? videoNext : videoCurrent;
-        const activeVideo = videoCurrent.classList.contains('active') ? videoCurrent : videoNext;
+        // 1. Actualizamos el índice y UI de inmediato para evitar bugs de clics rápidos
+        currentIndex = nextIndex;
+        updateDots(currentIndex);
 
-        // 1. Cargamos el video "tras bambalinas"
+        // Identificamos roles basándonos en la clase active
+        const activeVideo = domVideo1.classList.contains('active') ? domVideo1 : domVideo2;
+        const hiddenVideo = domVideo1.classList.contains('active') ? domVideo2 : domVideo1;
+
+        // 2. Cargamos el video "tras bambalinas"
         hiddenVideo.src = videoSources[nextIndex];
         hiddenVideo.load();
 
-        hiddenVideo.onloadeddata = () => {
-            // 2. Le damos play mientras aún es invisible (opacity 0)
+        // 3. Usamos 'canplay' y { once: true } para que se autodestruya el listener
+        hiddenVideo.addEventListener('canplay', () => {
             hiddenVideo.play().then(() => {
-                // 3. Superponemos: El nuevo entra a nivel 3, el viejo se queda en 2
+                // 4. Superponemos
                 hiddenVideo.style.zIndex = "3";
                 activeVideo.style.zIndex = "2";
                 
                 hiddenVideo.classList.add('active');
                 activeVideo.classList.remove('active');
-                updateDots(nextIndex);
 
-                // 4. Limpieza tras la transición (1.2s del SCSS)
+                // Aseguramos que solo el video visible tenga la orden de avanzar al terminar
+                activeVideo.onended = null;
+                hiddenVideo.onended = () => playNext();
+
+                // 5. Limpieza tras la transición del SCSS
                 setTimeout(() => {
                     activeVideo.pause();
-                    // Reseteamos z-index para la próxima conmutación
                     hiddenVideo.style.zIndex = "2";
                     activeVideo.style.zIndex = "1";
                     
-                    currentIndex = nextIndex;
                     isTransitioning = false;
-                    
-                    hiddenVideo.onended = () => playNext();
                 }, 1250); 
             }).catch(error => {
                 isTransitioning = false;
                 console.error("Error conmutando señal de video:", error);
             });
-        };
+        }, { once: true });
     };
 
-    // Inicialización (Llavazo inicial)
-    videoCurrent.src = videoSources[0];
-    videoCurrent.load();
-    videoCurrent.play().then(() => {
-        videoCurrent.classList.add('active');
-        updateDots(0);
-        videoCurrent.onended = () => playNext();
-    });
+    // Inicialización (Llavazo inicial sin doble carga)
+    // Asumimos que el HTML ya cargó el videoSources[0] en domVideo1
+    domVideo1.classList.add('active');
+    updateDots(0);
+    
+    // Arrancamos el ciclo
+    domVideo1.onended = () => playNext();
 
     dots.forEach((dot, index) => {
         dot.addEventListener('click', (e) => {
-            e.preventDefault(); // Evitamos que el hash #inicio mueva el scroll
+            e.preventDefault(); 
             playNext(index);
         });
     });
